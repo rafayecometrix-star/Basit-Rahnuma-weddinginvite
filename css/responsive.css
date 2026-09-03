@@ -1,0 +1,185 @@
+/* ═══════════════════════════════════════════════
+   RESPONSIVE — Media Queries
+   ═══════════════════════════════════════════════ */
+
+/* ─── Small Phones (375px and below) ─── */
+@media (max-width: 375px) {
+  .section {
+    padding: var(--space-2xl) var(--space-md);
+  }
+
+  .hero__name {
+    font-size: var(--text-3xl);
+  }
+
+  .countdown__digits {
+    gap: var(--space-md);
+  }
+
+  .countdown__number {
+    font-size: var(--text-2xl);
+  }
+
+  .ceremony__card {
+    padding: var(--space-xl) var(--space-md);
+  }
+
+  .ceremony__datetime {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .timeline__time {
+    width: 40px;
+    font-size: var(--text-xs);
+  }
+
+  .timeline::before {
+    left: 48px;
+  }
+
+  .story__gallery {
+    gap: var(--space-sm);
+  }
+
+  .hotel-card__image {
+    display: none;
+  }
+
+  .weekend__event-datetime {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+}
+
+/* ─── Tablets (768px+) ─── */
+@media (min-width: 768px) {
+  .section {
+    padding: var(--space-4xl) var(--space-2xl);
+  }
+
+  .invitation {
+    width: 100%;
+    margin: 0 auto;
+    box-shadow: none;
+  }
+
+  .hero__content {
+    max-width: 600px;
+  }
+}
+
+/* ─── Desktop & Laptops (1024px+) ─── */
+@media (min-width: 1024px) {
+  body {
+    background-color: var(--color-bg);
+    display: block;
+    padding: 0;
+    margin: 0;
+  }
+
+  .invitation {
+    width: 100%;
+    margin: 0 auto;
+    box-shadow: none;
+  }
+
+  .hero {
+    min-height: 100vh;
+    max-height: 1050px;
+  }
+
+  .hero__content {
+    max-width: 680px;
+    padding: var(--space-3xl) var(--space-2xl);
+  }
+
+  .envelope-wrapper {
+    width: 400px;
+    height: 540px;
+  }
+
+  .story__carousel-container {
+    max-width: 680px;
+  }
+}
+
+/* ─── Landscape Mode Safety ─── */
+@media (orientation: landscape) and (max-height: 500px) {
+  .hero {
+    min-height: 100vw;
+  }
+
+  .countdown {
+    min-height: auto;
+    padding: var(--space-2xl) var(--space-xl);
+  }
+
+  .dresscode {
+    min-height: auto;
+  }
+}
+
+/* ─── Prefer Reduced Motion ─── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal,
+  .reveal--left,
+  .reveal--right,
+  .reveal--scale {
+    opacity: 1;
+    transform: none;
+  }
+
+  .reveal-stagger > * {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ─── Dark Mode Support (subtle) ─── */
+@media (prefers-color-scheme: dark) {
+  /* Intentionally not applied — wedding invitations should keep their designed palette */
+}
+
+/* ─── High contrast / forced colors ─── */
+@media (forced-colors: active) {
+  .wax-seal__fallback {
+    border: 2px solid CanvasText;
+  }
+  
+  .action-btn {
+    border: 1px solid CanvasText;
+  }
+}
+
+/* ─── Print Styles ─── */
+@media print {
+  .envelope-screen,
+  .music-btn,
+  .action-buttons {
+    display: none !important;
+  }
+
+  .invitation {
+    box-shadow: none;
+    max-width: 100%;
+  }
+
+  .section {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .reveal, .reveal--left, .reveal--right, .reveal--scale {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

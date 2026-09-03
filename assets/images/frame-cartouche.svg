@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 320" fill="none">
+  <!-- Soft semi-transparent ivory wash fill -->
+  <path d="M 90 40 
+           C 140 25, 200 35, 250 25 
+           C 300 35, 360 25, 410 40 
+           C 445 55, 475 90, 475 140 
+           C 485 160, 485 180, 475 200 
+           C 475 240, 440 275, 400 290 
+           C 350 305, 300 295, 250 305 
+           C 200 295, 150 305, 100 290 
+           C 60 275, 25 240, 25 200 
+           C 15 180, 15 160, 25 140 
+           C 25 90, 55 55, 90 40 Z" 
+        fill="rgba(247, 249, 245, 0.85)" />
+
+  <!-- Outer ornamental border in antique gold/sage -->
+  <path d="M 90 40 
+           C 140 25, 200 35, 250 25 
+           C 300 35, 360 25, 410 40 
+           C 445 55, 475 90, 475 140 
+           C 485 160, 485 180, 475 200 
+           C 475 240, 440 275, 400 290 
+           C 350 305, 300 295, 250 305 
+           C 200 295, 150 305, 100 290 
+           C 60 275, 25 240, 25 200 
+           C 15 180, 15 160, 25 140 
+           C 25 90, 55 55, 90 40 Z" 
+        stroke="#8A9E78" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+
+  <!-- Inner delicate decorative border with scrolls -->
+  <path d="M 105 55 
+           C 150 45, 195 52, 250 45 
+           C 305 52, 350 45, 395 55 
+           C 425 70, 455 100, 455 145 
+           C 462 160, 462 175, 455 190 
+           C 455 225, 420 255, 385 270 
+           C 345 282, 305 275, 250 282 
+           C 195 275, 155 282, 115 270 
+           C 80 255, 45 225, 45 190 
+           C 38 175, 38 160, 45 145 
+           C 45 100, 75 70, 105 55 Z" 
+        stroke="#9A6E24" stroke-width="1.6" stroke-dasharray="6,3" />
+
+  <!-- Victorian Corner Flourishes -->
+  <!-- Top Center Shell -->
+  <path d="M 235 25 Q 250 15 265 25 Q 250 32 235 25" fill="#9A6E24" opacity="0.6" />
+  <circle cx="250" cy="18" r="3" fill="#9A6E24" />
+  
+  <!-- Bottom Center Shell -->
+  <path d="M 235 305 Q 250 315 265 305 Q 250 298 235 305" fill="#9A6E24" opacity="0.6" />
+  <circle cx="250" cy="312" r="3" fill="#9A6E24" />
+
+  <!-- Left / Right Filigree curls -->
+  <path d="M 20 150 C 10 160, 10 180, 20 190 C 25 180, 25 160, 20 150" stroke="#8A9E78" stroke-width="2" />
+  <path d="M 480 150 C 490 160, 490 180, 480 190 C 475 180, 475 160, 480 150" stroke="#8A9E78" stroke-width="2" />
+</svg>

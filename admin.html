@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Panel — Wedding Invitation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;600&display=swap" />
+  <link rel="stylesheet" href="css/admin.css" />
+</head>
+<body>
+  <div class="admin">
+    <!-- Header -->
+    <header class="admin__header">
+      <div class="admin__header-inner">
+        <h1 class="admin__logo">💌 Wedding Invitation</h1>
+        <p class="admin__subtitle">Admin Panel</p>
+      </div>
+      <div class="admin__header-actions">
+        <a href="index.html" target="_blank" class="admin__preview-btn" id="previewBtn">👁️ Preview Invitation</a>
+        <a href="dashboard.html" class="admin__dashboard-link">📊 Guest Dashboard</a>
+      </div>
+    </header>
+
+    <!-- Tabs -->
+    <nav class="admin__tabs" id="adminTabs">
+      <button class="admin__tab is-active" data-tab="couple">💑 Couple</button>
+      <button class="admin__tab" data-tab="story">📖 Story</button>
+      <button class="admin__tab" data-tab="venue">💒 Venue</button>
+      <button class="admin__tab" data-tab="schedule">📋 Schedule</button>
+      <button class="admin__tab" data-tab="weekend">🥂 Weekend</button>
+      <button class="admin__tab" data-tab="travel">✈️ Travel</button>
+      <button class="admin__tab" data-tab="rsvp">📝 RSVP</button>
+      <button class="admin__tab" data-tab="design">🎨 Design</button>
+    </nav>
+
+    <!-- Tab Panels -->
+    <main class="admin__content">
+
+      <!-- ═══ COUPLE TAB ═══ -->
+      <div class="admin__panel is-active" id="panel-couple">
+        <h2 class="admin__panel-title">Couple Details</h2>
+        <div class="admin__form-grid">
+          <div class="admin__field">
+            <label>Partner 1 Name</label>
+            <input type="text" id="cfg-couple-name1" placeholder="e.g. Martina" />
+          </div>
+          <div class="admin__field">
+            <label>Partner 2 Name</label>
+            <input type="text" id="cfg-couple-name2" placeholder="e.g. Javier" />
+          </div>
+          <div class="admin__field">
+            <label>Monogram (for wax seal)</label>
+            <input type="text" id="cfg-couple-monogram" placeholder="e.g. M&J" />
+          </div>
+          <div class="admin__field">
+            <label>Wedding Date & Time</label>
+            <input type="datetime-local" id="cfg-couple-weddingDate" />
+          </div>
+          <div class="admin__field admin__field--full">
+            <label>Welcome Title</label>
+            <input type="text" id="cfg-couple-welcomeTitle" placeholder="We're so happy to celebrate..." />
+          </div>
+          <div class="admin__field admin__field--full">
+            <label>Welcome Body</label>
+            <textarea id="cfg-couple-welcomeBody" rows="3" placeholder="Having you with us means the world..."></textarea>
+          </div>
+          <div class="admin__field admin__field--full">
+            <label>Couple Photo (for Scratch-to-Reveal Card)</label>
+            <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+              <input type="text" id="cfg-couple-couplePhoto" placeholder="assets/images/couple-photo.jpg or upload" style="flex:1; min-width:200px;" />
+              <label class="admin__file-btn" style="background:#4A7A9F; color:#FFFFFF; padding:9px 16px; border-radius:6px; font-size:0.85rem; cursor:pointer; display:inline-flex; align-items:center; gap:6px; font-weight:600; white-space:nowrap;">
+                📁 Choose from device
+                <input type="file" id="file-couple-photo" accept="image/*" style="display:none;" />
+              </label>
+            </div>
+            <div id="preview-couple-photo-container" style="margin-top:10px; display:flex; align-items:center; gap:10px;">
+              <img id="preview-couple-photo" alt="Couple Preview" style="width:70px; height:85px; object-fit:cover; border-radius:8px; border:2px solid #4A7A9F; box-shadow:0 4px 10px rgba(0,0,0,0.1);" />
+              <span id="preview-couple-photo-name" style="font-size:0.8rem; color:#666;"></span>
+            </div>
+          </div>
+        </div>
+        <div class="admin__section-label">Gallery Photos (for Carousel)</div>
+        <div id="galleryList" class="admin__dynamic-list"></div>
+        <div style="display:flex; gap:10px; margin-top:10px; flex-wrap:wrap;">
+          <button class="admin__add-btn" id="addGalleryPhoto">+ Add URL Photo</button>
+          <label class="admin__file-btn" style="background:#3C5A2A; color:#FFFFFF; padding:9px 18px; border-radius:6px; font-size:0.85rem; cursor:pointer; display:inline-flex; align-items:center; gap:6px; font-weight:600;">
+            📁 Upload photo from device
+            <input type="file" id="file-gallery-upload" accept="image/*" multiple style="display:none;" />
+          </label>
+        </div>
+      </div>
+
+      <!-- ═══ STORY TAB ═══ -->
+      <div class="admin__panel" id="panel-story">
+        <h2 class="admin__panel-title">Our Story</h2>
+        <div class="admin__toggle-row">
+          <label>Show Story Section</label>
+          <label class="admin__switch">
+            <input type="checkbox" id="cfg-story-show" checked />
+            <span class="admin__switch-slider"></span>
+          </label>
+        </div>
+        <div class="admin__field admin__field--full">
+          <label>Story Title</label>
+          <input type="text" id="cfg-story-title" placeholder="How it all started…" />
+        </div>
+        <div class="admin__section-label">Story Paragraphs</div>
+        <div id="storyParagraphs" class="admin__dynamic-list"></div>
+        <button class="admin__add-btn" id="addStoryParagraph">+ Add Paragraph</button>
+      </div>
+
+      <!-- ═══ VENUE TAB ═══ -->
+      <div class="admin__panel" id="panel-venue">
+        <h2 class="admin__panel-title">Venue & Ceremony</h2>
+        <div class="admin__form-grid">
+          <div class="admin__field">
+            <label>Venue Name</label>
+            <input type="text" id="cfg-venue-name" placeholder="Hotel du Cap-Eden-Roc" />
+          </div>
+          <div class="admin__field">
+            <label>City</label>
+            <input type="text" id="cfg-venue-city" placeholder="Antibes" />
+          </div>
+          <div class="admin__field">
+            <label>Country</label>
+            <input type="text" id="cfg-venue-country" placeholder="France" />
+          </div>
+          <div class="admin__field">
+            <label>Ceremony Time</label>
+            <input type="text" id="cfg-venue-ceremonyTime" placeholder="5:30 PM" />
+          </div>
+          <div class="admin__field admin__field--full">
+            <label>Full Address</label>
+            <input type="text" id="cfg-venue-address" placeholder="Boulevard J. F. Kennedy, 06160 Antibes, France" />
+          </div>
+          <div class="admin__field admin__field--full">
+            <label>Date Written Out</label>
+            <input type="text" id="cfg-venue-dateWrittenOut" placeholder="the twenty-seventh of September, two thousand twenty-six" />
+          </div>
+          <div class="admin__field">
+            <label>Day of Week</label>
+            <input type="text" id="cfg-venue-dayOfWeek" placeholder="SUNDAY" />
+          </div>
+          <div class="admin__field admin__field--full">
+            <label>Google Maps URL</label>
+            <input type="url" id="cfg-venue-googleMapsUrl" placeholder="https://maps.google.com/..." />
+          </div>
+          <div class="admin__field admin__field--full">
+            <label>Apple Maps URL</label>
+            <input type="url" id="cfg-venue-appleMapsUrl" placeholder="https://maps.apple.com/..." />
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ SCHEDULE TAB ═══ -->
+      <div class="admin__panel" id="panel-schedule">
+        <h2 class="admin__panel-title">Schedule / Timeline</h2>
+        <div class="admin__field admin__field--full">
+          <label>Date Label</label>
+          <input type="text" id="cfg-schedule-dateLabel" placeholder="Saturday, 29th August" />
+        </div>
+        <div class="admin__section-label">Events</div>
+        <div id="scheduleEvents" class="admin__dynamic-list"></div>
+        <button class="admin__add-btn" id="addScheduleEvent">+ Add Event</button>
+      </div>
+
+      <!-- ═══ WEEKEND TAB ═══ -->
+      <div class="admin__panel" id="panel-weekend">
+        <h2 class="admin__panel-title">Pre-Wedding Weekend</h2>
+        <div class="admin__toggle-row">
+          <label>Show Weekend Section</label>
+          <label class="admin__switch">
+            <input type="checkbox" id="cfg-weekend-show" checked />
+            <span class="admin__switch-slider"></span>
+          </label>
+        </div>
+        <div class="admin__form-grid">
+          <div class="admin__field">
+            <label>Section Title</label>
+            <input type="text" id="cfg-weekend-title" placeholder="The Weekend" />
+          </div>
+          <div class="admin__field">
+            <label>Subtitle</label>
+            <input type="text" id="cfg-weekend-subtitle" placeholder="JOIN US THE EVENING BEFORE" />
+          </div>
+          <div class="admin__field">
+            <label>Event Name</label>
+            <input type="text" id="cfg-weekend-eventName" placeholder="Restaurant César" />
+          </div>
+          <div class="admin__field">
+            <label>Location</label>
+            <input type="text" id="cfg-weekend-location" placeholder="Cap d'Antibes, France" />
+          </div>
+          <div class="admin__field">
+            <label>Date</label>
+            <input type="text" id="cfg-weekend-date" placeholder="Saturday | 26" />
+          </div>
+          <div class="admin__field">
+            <label>Month</label>
+            <input type="text" id="cfg-weekend-month" placeholder="September 2026" />
+          </div>
+          <div class="admin__field">
+            <label>Time Range</label>
+            <input type="text" id="cfg-weekend-timeRange" placeholder="5:30 – 8:30 PM" />
+          </div>
+          <div class="admin__field admin__field--full">
+            <label>Address</label>
+            <input type="text" id="cfg-weekend-address" placeholder="Plage Keller, Chemin de la Garoupe, 06160" />
+          </div>
+          <div class="admin__field admin__field--full">
+            <label>Google Maps URL</label>
+            <input type="url" id="cfg-weekend-mapsUrl" placeholder="https://maps.google.com/..." />
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ TRAVEL TAB ═══ -->
+      <div class="admin__panel" id="panel-travel">
+        <h2 class="admin__panel-title">Travel & Stay</h2>
+        <div class="admin__toggle-row">
+          <label>Show Travel Section</label>
+          <label class="admin__switch">
+            <input type="checkbox" id="cfg-travel-show" checked />
+            <span class="admin__switch-slider"></span>
+          </label>
+        </div>
+        <div class="admin__field admin__field--full">
+          <label>Section Title</label>
+          <input type="text" id="cfg-travel-title" placeholder="Travel & Stay" />
+        </div>
+        <div class="admin__field admin__field--full">
+          <label>Airport Info</label>
+          <textarea id="cfg-travel-airportInfo" rows="2" placeholder="We recommend flying into Nice..."></textarea>
+        </div>
+        <div class="admin__section-label">Hotels</div>
+        <div id="hotelsList" class="admin__dynamic-list"></div>
+        <button class="admin__add-btn" id="addHotel">+ Add Hotel</button>
+      </div>
+
+      <!-- ═══ RSVP TAB ═══ -->
+      <div class="admin__panel" id="panel-rsvp">
+        <h2 class="admin__panel-title">RSVP Settings</h2>
+        <div class="admin__form-grid">
+          <div class="admin__field admin__field--full">
+            <label>RSVP Deadline</label>
+            <input type="text" id="cfg-rsvp-deadline" placeholder="15 July 2026" />
+          </div>
+          <div class="admin__field">
+            <label>Max Guests Per RSVP</label>
+            <input type="number" id="cfg-rsvp-maxGuests" min="1" max="20" value="10" />
+          </div>
+        </div>
+        <div class="admin__toggle-row" style="margin-top:var(--space-lg);">
+          <label>Show Guest Count Field</label>
+          <label class="admin__switch">
+            <input type="checkbox" id="cfg-rsvp-showGuestCount" checked />
+            <span class="admin__switch-slider"></span>
+          </label>
+        </div>
+        <div class="admin__field admin__field--full" style="margin-top:var(--space-md);">
+          <label>Message Placeholder</label>
+          <input type="text" id="cfg-rsvp-messagePlaceholder" placeholder="Share a wish, a memory..." />
+        </div>
+      </div>
+
+      <!-- ═══ DESIGN TAB ═══ -->
+      <div class="admin__panel" id="panel-design">
+        <h2 class="admin__panel-title">Theme & Design</h2>
+        <div class="admin__form-grid">
+          <div class="admin__field admin__field--color">
+            <label>Primary Color (Headings)</label>
+            <input type="color" id="cfg-theme-primaryColor" value="#3C5A2A" />
+          </div>
+          <div class="admin__field admin__field--color">
+            <label>Accent Color (Frames)</label>
+            <input type="color" id="cfg-theme-accentColor" value="#6B94B8" />
+          </div>
+          <div class="admin__field admin__field--color">
+            <label>Background Color</label>
+            <input type="color" id="cfg-theme-backgroundColor" value="#F3F7F8" />
+          </div>
+          <div class="admin__field admin__field--color">
+            <label>Gold Accent</label>
+            <input type="color" id="cfg-theme-goldAccent" value="#9A6E24" />
+          </div>
+          <div class="admin__field admin__field--color">
+            <label>Button Color</label>
+            <input type="color" id="cfg-theme-buttonColor" value="#466324" />
+          </div>
+          <div class="admin__field">
+            <label>Photo Carousel Speed (ms)</label>
+            <input type="number" id="cfg-theme-carouselSpeed" value="3500" step="500" min="1000" max="10000" />
+          </div>
+        </div>
+        <div class="admin__form-grid" style="margin-top:var(--space-lg);">
+          <div class="admin__field">
+            <label>Heading Font</label>
+            <select id="cfg-theme-headingFont">
+              <option value="'Cormorant Garamond', serif">Cormorant Garamond</option>
+              <option value="'Playfair Display', serif">Playfair Display</option>
+              <option value="'Libre Baskerville', serif">Libre Baskerville</option>
+              <option value="'Lora', serif">Lora</option>
+              <option value="'EB Garamond', serif">EB Garamond</option>
+            </select>
+          </div>
+          <div class="admin__field">
+            <label>Body Font</label>
+            <select id="cfg-theme-bodyFont">
+              <option value="'Inter', sans-serif">Inter</option>
+              <option value="'Outfit', sans-serif">Outfit</option>
+              <option value="'Nunito', sans-serif">Nunito</option>
+              <option value="'Roboto', sans-serif">Roboto</option>
+            </select>
+          </div>
+        </div>
+        <div class="admin__toggle-row" style="margin-top:var(--space-lg);">
+          <label>Enable Background Music</label>
+          <label class="admin__switch">
+            <input type="checkbox" id="cfg-theme-enableMusic" />
+            <span class="admin__switch-slider"></span>
+          </label>
+        </div>
+        <div class="admin__field admin__field--full" style="margin-top:var(--space-md);">
+          <label>Music File URL</label>
+          <input type="text" id="cfg-theme-musicFile" placeholder="assets/audio/background-music.mp3" />
+        </div>
+      </div>
+
+    </main>
+
+    <!-- Footer Actions -->
+    <footer class="admin__footer">
+      <button class="admin__save-btn" id="saveBtn">💾 Save Changes</button>
+      <div class="admin__footer-actions">
+        <button class="admin__export-btn" id="exportBtn">📥 Export Config</button>
+        <label class="admin__import-btn">
+          📤 Import Config
+          <input type="file" accept=".json" id="importBtn" style="display:none;" />
+        </label>
+      </div>
+      <div class="admin__save-status" id="saveStatus"></div>
+    </footer>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="js/admin-app.js"></script>
+</body>
+</html>

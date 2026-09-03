@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guest RSVP Dashboard — Wedding Celebration</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;600;700&display=swap" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body>
+  <div class="dashboard">
+    <!-- Header -->
+    <header class="dashboard__header">
+      <div class="dashboard__brand">
+        <h1 class="dashboard__title">📊 Guest RSVP Dashboard</h1>
+        <p class="dashboard__subtitle">Real-time attendance & guest tracker</p>
+      </div>
+      <div class="dashboard__nav">
+        <a href="index.html" target="_blank" class="dashboard__link-btn">💌 View Invitation</a>
+        <a href="admin.html" class="dashboard__link-btn dashboard__link-btn--secondary">⚙️ Admin Panel</a>
+      </div>
+    </header>
+
+    <!-- Stats Summary Cards -->
+    <section class="dashboard__stats">
+      <div class="stat-card">
+        <div class="stat-card__icon">📬</div>
+        <div class="stat-card__info">
+          <span class="stat-card__label">Total Responses</span>
+          <span class="stat-card__val" id="statTotal">0</span>
+        </div>
+      </div>
+      <div class="stat-card stat-card--success">
+        <div class="stat-card__icon">✅</div>
+        <div class="stat-card__info">
+          <span class="stat-card__label">Attending</span>
+          <span class="stat-card__val" id="statAttending">0</span>
+        </div>
+      </div>
+      <div class="stat-card stat-card--danger">
+        <div class="stat-card__icon">❌</div>
+        <div class="stat-card__info">
+          <span class="stat-card__label">Declined</span>
+          <span class="stat-card__val" id="statDeclined">0</span>
+        </div>
+      </div>
+      <div class="stat-card stat-card--accent">
+        <div class="stat-card__icon">👥</div>
+        <div class="stat-card__info">
+          <span class="stat-card__label">Total Headcount</span>
+          <span class="stat-card__val" id="statHeadcount">0</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Controls Bar -->
+    <section class="dashboard__controls">
+      <div class="dashboard__filters">
+        <div class="search-box">
+          <input type="text" id="searchInput" placeholder="Search guests..." />
+        </div>
+        <div class="filter-group">
+          <button class="filter-btn is-active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="yes">Attending</button>
+          <button class="filter-btn" data-filter="no">Declined</button>
+        </div>
+      </div>
+      <div class="dashboard__actions">
+        <button class="action-btn-dashboard" id="btnExportCSV">📥 Export CSV</button>
+        <button class="action-btn-dashboard action-btn-dashboard--subtle" id="btnSeedData">🎲 Add Sample Data</button>
+        <button class="action-btn-dashboard action-btn-dashboard--danger" id="btnClearData">🗑️ Clear All</button>
+      </div>
+    </section>
+
+    <!-- Responses Table Container -->
+    <section class="dashboard__table-card">
+      <div class="table-responsive">
+        <table class="dashboard__table" id="responsesTable">
+          <thead>
+            <tr>
+              <th>Guest Name</th>
+              <th>Status</th>
+              <th>Headcount</th>
+              <th>Message</th>
+              <th>Submitted</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="responsesTableBody">
+            <!-- Populated via JavaScript -->
+          </tbody>
+        </table>
+      </div>
+      <div class="dashboard__empty-state" id="emptyState">
+        <div class="empty-icon">📭</div>
+        <h3>No RSVP responses yet</h3>
+        <p>Responses submitted from the invitation link will automatically show up here in real time.</p>
+      </div>
+    </section>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="js/dashboard-app.js"></script>
+</body>
+</html>

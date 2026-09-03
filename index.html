@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  
+  <title>You're Invited — Wedding Celebration</title>
+  <meta name="description" content="You are cordially invited to celebrate with us. Open this digital invitation to discover all the details." />
+  <meta name="theme-color" content="#4A1D24" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="You're Invited — Wedding Celebration" />
+  <meta property="og:description" content="You are cordially invited to celebrate with us." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Inter:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/envelope.css" />
+  <link rel="stylesheet" href="css/sections.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════
+       SECTION 0: ENVELOPE OPENING
+       ═══════════════════════════════════ -->
+  <div class="envelope-screen" id="envelopeScreen">
+    <div class="envelope-wrapper" id="envelopeWrapper">
+      <div class="envelope-body">
+        <!-- Flaps -->
+        <div class="envelope-flap envelope-flap--left"></div>
+        <div class="envelope-flap--right envelope-flap"></div>
+        <div class="envelope-flap envelope-flap--bottom"></div>
+        <div class="envelope-flap envelope-flap--top"></div>
+      </div>
+
+      <!-- Wax Seal -->
+      <div class="wax-seal" id="waxSeal">
+        <div class="wax-seal__fallback">
+          <span class="wax-seal__monogram" id="waxMonogram">M&J</span>
+        </div>
+      </div>
+    </div>
+
+    <span class="envelope-tap-text">TAP TO OPEN</span>
+  </div>
+
+  <!-- ═══════════════════════════════════
+       MAIN INVITATION
+       ═══════════════════════════════════ -->
+  <main class="invitation is-hidden" id="invitation">
+
+    <!-- ═══ SECTION 1: HERO ═══ -->
+    <section class="section section--no-padding hero" id="sectionHero">
+      <!-- Animated Floating Sky Clouds -->
+      <div class="hero__clouds" aria-hidden="true">
+        <div class="hero__cloud hero__cloud--1"></div>
+        <div class="hero__cloud hero__cloud--2"></div>
+        <div class="hero__cloud hero__cloud--3"></div>
+      </div>
+
+      <div class="hero__bg-image" id="heroBg">
+        <img src="assets/images/floral-arch.png" alt="Floral arch" class="hero__bg-image" loading="eager" id="heroArchImg" />
+      </div>
+      <div class="hero__overlay"></div>
+      <div class="hero__content reveal-stagger">
+        <p class="hero__subtitle">WE'RE GETTING MARRIED</p>
+        <h1 class="hero__name" id="heroName1">Martina</h1>
+        <span class="hero__ampersand">&</span>
+        <h1 class="hero__name" id="heroName2">Javier</h1>
+        <div class="hero__date" id="heroDate">
+          <span>27</span>
+          <span>SEP</span>
+          <span>2026</span>
+        </div>
+      </div>
+      <div class="hero__discover bounce-arrow" id="discoverBtn">
+        <span>DISCOVER</span>
+        <span class="hero__discover-arrow">↓</span>
+      </div>
+    </section>
+
+    <!-- ═══ SECTION 2: COUNTDOWN ═══ -->
+    <section class="section countdown" id="sectionCountdown">
+      <div class="countdown__frame reveal--scale">
+        <!-- Transparent Vector Ornate Cartouche (zero white box) -->
+        <img src="assets/images/frame-cartouche.svg" alt="" class="countdown__frame-image" loading="lazy" />
+        <div class="countdown__inner">
+          <h2 class="countdown__title">Countdown</h2>
+          <p class="countdown__date-label" id="countdownDateLabel">UNTIL 27 SEPTEMBER 2026</p>
+          <div class="countdown__digits" id="countdownDigits">
+            <div class="countdown__unit">
+              <span class="countdown__number" id="countDays">00</span>
+              <span class="countdown__label">Days</span>
+            </div>
+            <div class="countdown__unit">
+              <span class="countdown__number" id="countHours">00</span>
+              <span class="countdown__label">Hours</span>
+            </div>
+            <div class="countdown__unit">
+              <span class="countdown__number" id="countMinutes">00</span>
+              <span class="countdown__label">Minutes</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Transparent Vector Floral Spray (zero white box) -->
+      <img src="assets/images/floral-spray.svg" alt="Botanical spray" class="countdown__flowers reveal" loading="lazy" />
+    </section>
+
+    <!-- ═══ SECTION 3: SCRATCH TO REVEAL ═══ -->
+    <section class="section scratch-section" id="sectionScratch">
+      <h2 class="scratch-section__title reveal" id="scratchTitle">We're so happy to celebrate this day with you.</h2>
+      <p class="scratch-section__body reveal" id="scratchBody">Having you with us means the world. We can't wait to welcome you to Hotel du Cap-Eden-Roc on September 27th, 2026.</p>
+      <div class="scratch-container reveal--scale" id="scratchContainer">
+        <!-- Transparent Cameo Frame (zero white box, transparent center) -->
+        <img src="assets/images/frame-cameo.svg" alt="Cameo frame" class="scratch-frame" loading="lazy" />
+        <img src="assets/images/couple-photo.jpg" alt="The couple" class="scratch-photo" id="scratchPhoto" loading="lazy" />
+        <canvas class="scratch-canvas" id="scratchCanvas"></canvas>
+        <span class="scratch-hint shimmer-text" id="scratchHint">Scratch to<br>reveal</span>
+      </div>
+    </section>
+
+    <!-- ═══ SECTION 4: FORMAL WELCOME ═══ -->
+    <section class="section welcome" id="sectionWelcome">
+      <img src="assets/images/hydrangea-garland.png" alt="Hydrangea garland" class="welcome__garland reveal" loading="lazy" />
+      <div class="reveal-stagger">
+        <h2 class="welcome__title">Welcome</h2>
+        <p class="welcome__families">Together with their families</p>
+        <span class="welcome__name" id="welcomeName1">Martina</span>
+        <span class="welcome__and">and</span>
+        <span class="welcome__name" id="welcomeName2">Javier</span>
+        <p class="welcome__request">request the honor of your presence as they exchange vows of marriage</p>
+        <p class="welcome__day" id="welcomeDay">ON SUNDAY</p>
+        <p class="welcome__date-written" id="welcomeDateWritten">the twenty-seventh of September<br>two thousand twenty-six</p>
+      </div>
+    </section>
+
+    <!-- ═══ SECTION 5: CEREMONY & RECEPTION ═══ -->
+    <section class="section ceremony" id="sectionCeremony">
+      <div class="ceremony__card reveal">
+        <img src="assets/images/hydrangea-garland.png" alt="" class="ceremony__hedge" loading="lazy" />
+        <h2 class="ceremony__title">Ceremony<br>& Reception</h2>
+        <div class="ceremony__divider"></div>
+        <p class="ceremony__where">WHERE WE CELEBRATE</p>
+        <h3 class="ceremony__venue" id="ceremonyVenue">Hotel du<br>Cap-Eden-Roc</h3>
+        <p class="ceremony__city" id="ceremonyCity">ANTIBES, FRANCE</p>
+        <div class="ceremony__datetime">
+          <div class="ceremony__date-col" id="ceremonyDate">
+            <span>Sunday, 27th</span><br>
+            <span>of September, 2026</span>
+          </div>
+          <div class="ceremony__time-col" id="ceremonyTime">5:30 PM</div>
+        </div>
+        <div class="ceremony__divider"></div>
+        <p class="ceremony__address" id="ceremonyAddress">Boulevard J. F. Kennedy</p>
+        <p class="ceremony__address-sub" id="ceremonyAddressSub">06160 Antibes, France</p>
+        <img src="assets/images/venue-illustration.png" alt="Venue" class="ceremony__venue-image" loading="lazy" />
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="action-buttons">
+        <div class="dropdown-wrapper">
+          <button class="action-btn" id="btnOpenMaps" aria-haspopup="true" aria-expanded="false">
+            <span class="action-btn__icon">◎</span>
+            OPEN IN MAPS
+          </button>
+          <div class="dropdown" id="dropdownMaps">
+            <a class="dropdown__item" id="linkGoogleMaps" href="#" target="_blank" rel="noopener">Google Maps</a>
+            <a class="dropdown__item" id="linkAppleMaps" href="#" target="_blank" rel="noopener">Apple Maps</a>
+          </div>
+        </div>
+        <div class="dropdown-wrapper">
+          <button class="action-btn" id="btnAddCalendar" aria-haspopup="true" aria-expanded="false">
+            <span class="action-btn__icon">📅</span>
+            ADD TO CALENDAR
+          </button>
+          <div class="dropdown" id="dropdownCalendar">
+            <button class="dropdown__item" id="linkGoogleCalendar">Google Calendar</button>
+            <button class="dropdown__item" id="linkAppleCalendar">Apple Calendar</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ SECTION 6: SCHEDULE ═══ -->
+    <section class="section schedule" id="sectionSchedule">
+      <h2 class="schedule__title reveal">Schedule</h2>
+      <p class="schedule__date reveal" id="scheduleDate">Saturday, 29th August</p>
+      <div class="timeline" id="timeline">
+        <!-- Timeline items injected by JS from config -->
+      </div>
+      <img src="assets/images/branch-divider.png" alt="" class="schedule__divider reveal" loading="lazy" />
+    </section>
+
+    <!-- ═══ SECTION 7: OUR STORY & PHOTO CAROUSEL ═══ -->
+    <section class="section story" id="sectionStory">
+      <img src="assets/images/wedding-cake.png" alt="Wedding cake" class="story__cake float reveal" loading="lazy" style="mix-blend-mode: multiply;" />
+      <h2 class="story__title reveal" id="storyTitle">How it all<br>started…</h2>
+      <button class="story__toggle reveal" id="storyToggle">
+        <span id="storyToggleText">Our Story</span>
+      </button>
+      <div class="story__content" id="storyContent">
+        <div id="storyParagraphs">
+          <!-- Paragraphs injected by JS from config -->
+        </div>
+        <!-- Elegant floating butterflies with authentic wing outlines -->
+        <svg class="butterfly float" style="top:6%;right:8%;width:36px;height:36px;" viewBox="0 0 64 64" fill="none">
+          <path d="M32 28 C30 18 18 10 10 16 C2 22 4 34 14 36 C20 37 26 34 32 30 Z" fill="rgba(196,149,74,0.3)" stroke="#C4954A" stroke-width="1.5"/>
+          <path d="M32 28 C34 18 46 10 54 16 C62 22 60 34 50 36 C44 37 38 34 32 30 Z" fill="rgba(196,149,74,0.3)" stroke="#C4954A" stroke-width="1.5"/>
+          <path d="M32 30 C27 34 20 44 14 42 C10 40 12 34 16 32 C22 30 28 30 32 30 Z" fill="rgba(74,122,159,0.3)" stroke="#4A7A9F" stroke-width="1.2"/>
+          <path d="M32 30 C37 34 44 44 50 42 C54 40 52 34 48 32 C42 30 36 30 32 30 Z" fill="rgba(74,122,159,0.3)" stroke="#4A7A9F" stroke-width="1.2"/>
+          <line x1="32" y1="20" x2="32" y2="44" stroke="#7A5820" stroke-width="2" stroke-linecap="round"/>
+          <path d="M32 20 Q26 14 24 10 M32 20 Q38 14 40 10" stroke="#7A5820" stroke-width="1.2" fill="none"/>
+        </svg>
+        <svg class="butterfly float--delay-2" style="bottom:12%;left:6%;width:30px;height:30px;" viewBox="0 0 64 64" fill="none">
+          <path d="M32 28 C30 18 18 10 10 16 C2 22 4 34 14 36 C20 37 26 34 32 30 Z" fill="rgba(74,122,159,0.3)" stroke="#4A7A9F" stroke-width="1.5"/>
+          <path d="M32 28 C34 18 46 10 54 16 C62 22 60 34 50 36 C44 37 38 34 32 30 Z" fill="rgba(74,122,159,0.3)" stroke="#4A7A9F" stroke-width="1.5"/>
+          <line x1="32" y1="20" x2="32" y2="44" stroke="#4A7A9F" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+      </div>
+
+      <!-- ═══ PHOTO CAROUSEL (4:5 Aspect Ratio, Borderless, Auto-scrolling) ═══ -->
+      <div class="story__carousel-container reveal" id="storyCarouselContainer">
+        <img src="assets/images/carousel-leaf-branch.svg" alt="" class="story__carousel-flank story__carousel-flank--left" aria-hidden="true" />
+        <div class="story__carousel" id="storyCarousel">
+          <div class="story__carousel-track" id="storyCarouselTrack">
+            <!-- Carousel slides injected by JS from config -->
+          </div>
+        </div>
+        <img src="assets/images/carousel-leaf-branch.svg" alt="" class="story__carousel-flank story__carousel-flank--right" aria-hidden="true" />
+        <div class="carousel-dots" id="carouselDots">
+          <!-- Dots injected by JS from config -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ SECTION 9: THE WEEKEND ═══ -->
+    <section class="section weekend" id="sectionWeekend">
+      <div class="weekend__medallion reveal--scale">
+        <img src="assets/images/medallion-scene.png" alt="Weekend scene" loading="lazy" />
+      </div>
+      <h2 class="weekend__title reveal" id="weekendTitle">The Weekend</h2>
+      <div class="weekend__divider"></div>
+      <p class="weekend__subtitle reveal" id="weekendSubtitle">JOIN US THE EVENING BEFORE</p>
+      <div class="weekend__card reveal">
+        <h3 class="weekend__event-name" id="weekendEventName">Restaurant César</h3>
+        <p class="weekend__event-location" id="weekendLocation">CAP D'ANTIBES, FRANCE</p>
+        <div class="weekend__event-datetime">
+          <span class="weekend__event-date" id="weekendDate">Saturday | 26<br>September 2026</span>
+          <span class="weekend__event-time" id="weekendTime">5:30 – 8:30<br>PM</span>
+        </div>
+        <div class="ceremony__divider" style="margin: var(--space-md) auto;"></div>
+        <p class="weekend__event-address" id="weekendAddress">Plage Keller, Chemin de la Garoupe</p>
+        <p class="weekend__event-address-sub" id="weekendAddressSub">06160 Antibes, France</p>
+        <div class="weekend__car-wrapper">
+          <img src="assets/images/vintage-car.png" alt="Vintage car" class="weekend__car" loading="lazy" />
+        </div>
+      </div>
+      <div class="action-buttons" style="margin-top: var(--space-xl);">
+        <div class="dropdown-wrapper">
+          <button class="action-btn" id="btnWeekendMaps">
+            <span class="action-btn__icon">◎</span>
+            OPEN IN MAPS
+          </button>
+          <div class="dropdown" id="dropdownWeekendMaps">
+            <a class="dropdown__item" id="linkWeekendGoogleMaps" href="#" target="_blank" rel="noopener">Google Maps</a>
+            <a class="dropdown__item" id="linkWeekendAppleMaps" href="#" target="_blank" rel="noopener">Apple Maps</a>
+          </div>
+        </div>
+        <div class="dropdown-wrapper">
+          <button class="action-btn" id="btnWeekendCalendar">
+            <span class="action-btn__icon">📅</span>
+            ADD TO CALENDAR
+          </button>
+          <div class="dropdown" id="dropdownWeekendCalendar">
+            <button class="dropdown__item" id="linkWeekendGCal">Google Calendar</button>
+            <button class="dropdown__item" id="linkWeekendACal">Apple Calendar</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ SECTION 10: TRAVEL & STAY ═══ -->
+    <section class="section travel" id="sectionTravel">
+      <h2 class="travel__title reveal" id="travelTitle">Travel & Stay</h2>
+      <p class="travel__airport reveal" id="travelAirport">We recommend flying into Nice Côte d'Azur International Airport (NCE). The venue is approximately 30 minutes by car.</p>
+      <div id="hotelCards">
+        <!-- Hotel cards injected by JS from config -->
+      </div>
+    </section>
+
+    <!-- ═══ SECTION 11: RSVP ═══ -->
+    <section class="section rsvp" id="sectionRsvp">
+      <h2 class="rsvp__title reveal">RSVP</h2>
+      <div class="rsvp__divider"></div>
+      <p class="rsvp__deadline reveal" id="rsvpDeadline">KINDLY RESPOND BY 15 JULY 2026</p>
+
+      <form class="form" id="rsvpForm">
+        <!-- Full Name -->
+        <div class="form__group reveal">
+          <label class="form__label form__label--required" for="rsvpName">Full name</label>
+          <input type="text" class="form__input" id="rsvpName" name="fullName" placeholder="Enter your full name" required />
+        </div>
+
+        <!-- Attending -->
+        <div class="form__group reveal">
+          <label class="form__label form__label--required">Will you be attending?</label>
+          <div class="radio-group">
+            <label class="radio-option">
+              <input type="radio" name="attending" value="yes" checked />
+              <span>Joyfully accepts</span>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="attending" value="no" />
+              <span>Regretfully declines</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Guest Count -->
+        <div class="form__group reveal" id="guestCountGroup">
+          <label class="form__label form__label--required">
+            <span class="guest-count-label">
+              <span class="guest-count-label__icon">👥</span>
+              Number of guests attending
+            </span>
+          </label>
+          <div class="stepper" id="guestStepper">
+            <button type="button" class="stepper__btn" id="stepperMinus" aria-label="Decrease">−</button>
+            <span class="stepper__value" id="stepperValue">1</span>
+            <button type="button" class="stepper__btn" id="stepperPlus" aria-label="Increase">+</button>
+          </div>
+        </div>
+
+        <!-- Message -->
+        <div class="form__group reveal">
+          <label class="form__label" for="rsvpMessage">A personal message for the couple</label>
+          <textarea class="form__input form__textarea" id="rsvpMessage" name="message" placeholder="Share a wish, a memory, or anything you'd like us to read..."></textarea>
+        </div>
+
+        <!-- Submit -->
+        <button type="submit" class="submit-btn reveal" id="rsvpSubmit">
+          <span class="submit-btn__icon">✈</span>
+          SEND RSVP
+        </button>
+      </form>
+
+      <!-- Success Message -->
+      <div class="success-message" id="rsvpSuccess">
+        <div class="success-message__icon">💌</div>
+        <h3 class="success-message__title">Thank you!</h3>
+        <p class="success-message__text">Your RSVP has been received. We can't wait to celebrate with you!</p>
+      </div>
+    </section>
+
+    <!-- ═══ SECTION 11: CLOSING ═══ -->
+    <section class="section closing" id="sectionClosing">
+      <div class="closing__card reveal--scale">
+        <h2 class="closing__names" id="closingNames">Martina & Javier</h2>
+        <p class="closing__date" id="closingDate">SEPTEMBER 27, 2026</p>
+      </div>
+      <p class="closing__footer reveal">Made with love by <a href="https://ecometrixsolutions.in/" target="_blank" rel="noopener">Ecometrix Solutions</a></p>
+    </section>
+
+  </main>
+
+  <!-- Music Toggle -->
+  <button class="music-btn is-hidden" id="musicBtn" aria-label="Toggle music">
+    🎵
+  </button>
+
+  <!-- Audio -->
+  <audio id="bgMusic" loop preload="none">
+    <source src="assets/audio/background-music.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- Confetti Canvas -->
+  <canvas id="confettiCanvas" style="position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:9999;"></canvas>
+
+  <!-- Scripts -->
+  <script src="config.js"></script>
+  <script src="js/config-loader.js"></script>
+  <script src="js/envelope.js"></script>
+  <script src="js/countdown.js"></script>
+  <script src="js/scratch.js"></script>
+  <script src="js/scroll-animations.js"></script>
+  <script src="js/story-toggle.js"></script>
+  <script src="js/carousel.js"></script>
+  <script src="js/dropdowns.js"></script>
+  <script src="js/rsvp.js"></script>
+  <script src="js/confetti.js"></script>
+  <script src="js/music.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
