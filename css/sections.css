@@ -1434,17 +1434,28 @@
 }
 
 .closing__footer {
-  margin-top: var(--space-xl);
+  margin-top: var(--space-2xl);
+  margin-bottom: var(--space-lg);
   font-family: var(--font-heading);
-  font-size: var(--text-sm);
+  font-size: clamp(0.95rem, 2.4vw, 1.05rem);
   color: var(--color-text-secondary);
   font-style: italic;
+  letter-spacing: 0.03em;
+  position: relative;
+  z-index: 10;
+  display: block;
 }
 
 .closing__footer a {
   color: var(--color-primary);
+  font-weight: 600;
   text-decoration: underline;
-  text-underline-offset: 2px;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.closing__footer a:hover {
+  color: var(--color-gold);
 }
 
 /* ─── Music Toggle Button ─── */
