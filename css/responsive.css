@@ -12,6 +12,25 @@
     font-size: var(--text-3xl);
   }
 
+  .bismillah__card {
+    padding: 1.25rem 0.85rem;
+    width: 95vw;
+  }
+
+  .bismillah__arabic {
+    font-size: 1.65rem;
+    line-height: 1.6;
+  }
+
+  .welcome__name {
+    font-size: 2rem;
+  }
+
+  .welcome__lineage {
+    font-size: 0.85rem;
+    padding: 0 4px;
+  }
+
   .countdown__digits {
     gap: var(--space-md);
   }
@@ -49,6 +68,28 @@
   .weekend__event-datetime {
     flex-direction: column;
     gap: var(--space-sm);
+  }
+}
+
+/* ─── Standard Mobile Devices (under 600px) ─── */
+@media (max-width: 600px) {
+  .welcome__garland,
+  .ceremony__hedge,
+  .schedule__divider {
+    max-width: 100%;
+    object-fit: contain;
+  }
+
+  .bismillah__card {
+    padding: 1.5rem 1rem;
+  }
+
+  .welcome__person {
+    padding: 0 0.5rem;
+  }
+
+  .closing__card {
+    padding: var(--space-xl) var(--space-md);
   }
 }
 

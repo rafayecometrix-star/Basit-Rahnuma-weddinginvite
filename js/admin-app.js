@@ -13,7 +13,12 @@
   const saved = localStorage.getItem('wedding_config');
   if (saved) {
     try {
-      config = JSON.parse(saved);
+      const parsed = JSON.parse(saved);
+      if (parsed && parsed.version === WEDDING_CONFIG.version && parsed?.couple?.name1 === "Abdul Basit") {
+        config = Object.assign({}, config, parsed);
+      } else {
+        localStorage.removeItem('wedding_config');
+      }
     } catch (e) { /* use defaults */ }
   }
 

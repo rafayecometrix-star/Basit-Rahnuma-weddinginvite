@@ -18,7 +18,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Inter:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Inter:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" />
 
   <!-- CSS -->
   <link rel="stylesheet" href="css/variables.css" />
@@ -47,7 +47,7 @@
       <!-- Wax Seal -->
       <div class="wax-seal" id="waxSeal">
         <div class="wax-seal__fallback">
-          <span class="wax-seal__monogram" id="waxMonogram">M&J</span>
+          <span class="wax-seal__monogram" id="waxMonogram">A&R</span>
         </div>
       </div>
     </div>
@@ -74,19 +74,31 @@
       </div>
       <div class="hero__overlay"></div>
       <div class="hero__content reveal-stagger">
-        <p class="hero__subtitle">WE'RE GETTING MARRIED</p>
-        <h1 class="hero__name" id="heroName1">Martina</h1>
+        <p class="hero__subtitle">WEDDING RECEPTION</p>
+        <h1 class="hero__name" id="heroName1">Abdul Basit</h1>
         <span class="hero__ampersand">&</span>
-        <h1 class="hero__name" id="heroName2">Javier</h1>
+        <h1 class="hero__name" id="heroName2">Rahnuma Fatima</h1>
         <div class="hero__date" id="heroDate">
-          <span>27</span>
-          <span>SEP</span>
+          <span>16</span>
+          <span>NOV</span>
           <span>2026</span>
         </div>
       </div>
       <div class="hero__discover bounce-arrow" id="discoverBtn">
         <span>DISCOVER</span>
         <span class="hero__discover-arrow">↓</span>
+      </div>
+    </section>
+
+    <!-- ═══ SECTION 1.5: BISMILLAH ═══ -->
+    <section class="section bismillah reveal" id="sectionBismillah">
+      <div class="bismillah__card">
+        <div class="bismillah__ornament bismillah__ornament--top">❧ ❖ ☙</div>
+        <p class="bismillah__arabic" dir="rtl" lang="ar">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</p>
+        <div class="bismillah__divider"></div>
+        <p class="bismillah__english">In the name of ALLAH</p>
+        <p class="bismillah__sub">The Most Merciful &amp; The Most Compassionate</p>
+        <div class="bismillah__ornament bismillah__ornament--bottom">❧ ❖ ☙</div>
       </div>
     </section>
 
@@ -97,7 +109,7 @@
         <img src="assets/images/frame-cartouche.svg" alt="" class="countdown__frame-image" loading="lazy" />
         <div class="countdown__inner">
           <h2 class="countdown__title">Countdown</h2>
-          <p class="countdown__date-label" id="countdownDateLabel">UNTIL 27 SEPTEMBER 2026</p>
+          <p class="countdown__date-label" id="countdownDateLabel">UNTIL 16 NOVEMBER 2026</p>
           <div class="countdown__digits" id="countdownDigits">
             <div class="countdown__unit">
               <span class="countdown__number" id="countDays">00</span>
@@ -136,13 +148,26 @@
       <img src="assets/images/hydrangea-garland.png" alt="Hydrangea garland" class="welcome__garland reveal" loading="lazy" />
       <div class="reveal-stagger">
         <h2 class="welcome__title">Welcome</h2>
-        <p class="welcome__families">Together with their families</p>
-        <span class="welcome__name" id="welcomeName1">Martina</span>
-        <span class="welcome__and">and</span>
-        <span class="welcome__name" id="welcomeName2">Javier</span>
-        <p class="welcome__request">request the honor of your presence as they exchange vows of marriage</p>
-        <p class="welcome__day" id="welcomeDay">ON SUNDAY</p>
-        <p class="welcome__date-written" id="welcomeDateWritten">the twenty-seventh of September<br>two thousand twenty-six</p>
+        <p class="welcome__families" id="welcomeParents">Mrs. Sahba Firdaus &amp; Mr. Nizam Alam</p>
+        <p class="welcome__request" id="welcomeRequest">Request the honour of your presence<br>on the occasion of the Wedding Reception of their son</p>
+        
+        <div class="welcome__couple-group">
+          <div class="welcome__person">
+            <h3 class="welcome__name" id="welcomeName1">Abdul Basit</h3>
+            <p class="welcome__lineage" id="welcomeLineage1">(Grand S/o Late Mrs. &amp; Mr. Abdul Hameed Sheikh)</p>
+          </div>
+
+          <span class="welcome__and">with</span>
+
+          <div class="welcome__person">
+            <h3 class="welcome__name" id="welcomeName2">Rahnuma Fatima</h3>
+            <p class="welcome__lineage" id="welcomeLineage2">(D/o Mrs. &amp; Mr. Mohd. Nahid)</p>
+          </div>
+        </div>
+
+        <p class="welcome__on-label">on</p>
+        <p class="welcome__day" id="welcomeDay">Monday, 16th November, 2026</p>
+        <p class="welcome__time" id="welcomeTime">8:30 PM onwards</p>
       </div>
     </section>
 
@@ -150,21 +175,21 @@
     <section class="section ceremony" id="sectionCeremony">
       <div class="ceremony__card reveal">
         <img src="assets/images/hydrangea-garland.png" alt="" class="ceremony__hedge" loading="lazy" />
-        <h2 class="ceremony__title">Ceremony<br>& Reception</h2>
+        <h2 class="ceremony__title">Wedding<br>&amp; Reception</h2>
         <div class="ceremony__divider"></div>
         <p class="ceremony__where">WHERE WE CELEBRATE</p>
-        <h3 class="ceremony__venue" id="ceremonyVenue">Hotel du<br>Cap-Eden-Roc</h3>
-        <p class="ceremony__city" id="ceremonyCity">ANTIBES, FRANCE</p>
+        <h3 class="ceremony__venue" id="ceremonyVenue">Royal Palace</h3>
+        <p class="ceremony__city" id="ceremonyCity">JAJMAU, KANPUR</p>
         <div class="ceremony__datetime">
           <div class="ceremony__date-col" id="ceremonyDate">
-            <span>Sunday, 27th</span><br>
-            <span>of September, 2026</span>
+            <span>Monday, 16th</span><br>
+            <span>of November, 2026</span>
           </div>
-          <div class="ceremony__time-col" id="ceremonyTime">5:30 PM</div>
+          <div class="ceremony__time-col" id="ceremonyTime">8:30 PM onwards</div>
         </div>
         <div class="ceremony__divider"></div>
-        <p class="ceremony__address" id="ceremonyAddress">Boulevard J. F. Kennedy</p>
-        <p class="ceremony__address-sub" id="ceremonyAddressSub">06160 Antibes, France</p>
+        <p class="ceremony__address" id="ceremonyAddress">Galla Godam, Jajmau</p>
+        <p class="ceremony__address-sub" id="ceremonyAddressSub">Kanpur, Uttar Pradesh</p>
         <img src="assets/images/venue-illustration.png" alt="Venue" class="ceremony__venue-image" loading="lazy" />
       </div>
 
@@ -176,8 +201,8 @@
             OPEN IN MAPS
           </button>
           <div class="dropdown" id="dropdownMaps">
-            <a class="dropdown__item" id="linkGoogleMaps" href="#" target="_blank" rel="noopener">Google Maps</a>
-            <a class="dropdown__item" id="linkAppleMaps" href="#" target="_blank" rel="noopener">Apple Maps</a>
+            <a class="dropdown__item" id="linkGoogleMaps" href="https://www.google.com/maps/place/Royal+Palace/@26.4304798,80.3934503,17z/data=!3m1!4b1!4m6!3m5!1s0x399c40e305db2175:0x907b49ea2c4d1a13!8m2!3d26.4304798!4d80.3960252!16s%2Fg%2F11sbr0d7fs" target="_blank" rel="noopener">Google Maps</a>
+            <a class="dropdown__item" id="linkAppleMaps" href="https://maps.apple.com/?q=Royal+Palace+Jajmau+Kanpur" target="_blank" rel="noopener">Apple Maps</a>
           </div>
         </div>
         <div class="dropdown-wrapper">
@@ -196,14 +221,14 @@
     <!-- ═══ SECTION 6: SCHEDULE ═══ -->
     <section class="section schedule" id="sectionSchedule">
       <h2 class="schedule__title reveal">Schedule</h2>
-      <p class="schedule__date reveal" id="scheduleDate">Saturday, 29th August</p>
+      <p class="schedule__date reveal" id="scheduleDate">Monday, 16th November 2026</p>
       <div class="timeline" id="timeline">
         <!-- Timeline items injected by JS from config -->
       </div>
       <img src="assets/images/branch-divider.png" alt="" class="schedule__divider reveal" loading="lazy" />
     </section>
 
-    <!-- ═══ SECTION 7: OUR STORY & PHOTO CAROUSEL ═══ -->
+    <!-- ═══ SECTION 7: OUR STORY ═══ -->
     <section class="section story" id="sectionStory">
       <img src="assets/images/wedding-cake.png" alt="Wedding cake" class="story__cake float reveal" loading="lazy" style="mix-blend-mode: multiply;" />
       <h2 class="story__title reveal" id="storyTitle">How it all<br>started…</h2>
@@ -214,23 +239,12 @@
         <div id="storyParagraphs">
           <!-- Paragraphs injected by JS from config -->
         </div>
-        <!-- Elegant floating butterflies with authentic wing outlines -->
-        <svg class="butterfly float" style="top:6%;right:8%;width:36px;height:36px;" viewBox="0 0 64 64" fill="none">
-          <path d="M32 28 C30 18 18 10 10 16 C2 22 4 34 14 36 C20 37 26 34 32 30 Z" fill="rgba(196,149,74,0.3)" stroke="#C4954A" stroke-width="1.5"/>
-          <path d="M32 28 C34 18 46 10 54 16 C62 22 60 34 50 36 C44 37 38 34 32 30 Z" fill="rgba(196,149,74,0.3)" stroke="#C4954A" stroke-width="1.5"/>
-          <path d="M32 30 C27 34 20 44 14 42 C10 40 12 34 16 32 C22 30 28 30 32 30 Z" fill="rgba(74,122,159,0.3)" stroke="#4A7A9F" stroke-width="1.2"/>
-          <path d="M32 30 C37 34 44 44 50 42 C54 40 52 34 48 32 C42 30 36 30 32 30 Z" fill="rgba(74,122,159,0.3)" stroke="#4A7A9F" stroke-width="1.2"/>
-          <line x1="32" y1="20" x2="32" y2="44" stroke="#7A5820" stroke-width="2" stroke-linecap="round"/>
-          <path d="M32 20 Q26 14 24 10 M32 20 Q38 14 40 10" stroke="#7A5820" stroke-width="1.2" fill="none"/>
-        </svg>
-        <svg class="butterfly float--delay-2" style="bottom:12%;left:6%;width:30px;height:30px;" viewBox="0 0 64 64" fill="none">
-          <path d="M32 28 C30 18 18 10 10 16 C2 22 4 34 14 36 C20 37 26 34 32 30 Z" fill="rgba(74,122,159,0.3)" stroke="#4A7A9F" stroke-width="1.5"/>
-          <path d="M32 28 C34 18 46 10 54 16 C62 22 60 34 50 36 C44 37 38 34 32 30 Z" fill="rgba(74,122,159,0.3)" stroke="#4A7A9F" stroke-width="1.5"/>
-          <line x1="32" y1="20" x2="32" y2="44" stroke="#4A7A9F" stroke-width="1.8" stroke-linecap="round"/>
-        </svg>
       </div>
+    </section>
 
-      <!-- ═══ PHOTO CAROUSEL (4:5 Aspect Ratio, Borderless, Auto-scrolling) ═══ -->
+    <!-- ═══ SECTION 8: PHOTO CAROUSEL ═══ -->
+    <section class="section photo-gallery" id="sectionCarousel">
+      <h2 class="photo-gallery__title reveal">Cherished Moments</h2>
       <div class="story__carousel-container reveal" id="storyCarouselContainer">
         <img src="assets/images/carousel-leaf-branch.svg" alt="" class="story__carousel-flank story__carousel-flank--left" aria-hidden="true" />
         <div class="story__carousel" id="storyCarousel">
@@ -367,8 +381,10 @@
     <!-- ═══ SECTION 11: CLOSING ═══ -->
     <section class="section closing" id="sectionClosing">
       <div class="closing__card reveal--scale">
-        <h2 class="closing__names" id="closingNames">Martina & Javier</h2>
-        <p class="closing__date" id="closingDate">SEPTEMBER 27, 2026</p>
+        <h2 class="closing__names" id="closingNames">Abdul Basit &amp; Rahnuma Fatima</h2>
+        <p class="closing__date" id="closingDate">NOVEMBER 16, 2026</p>
+        <div class="closing__divider">❧ ❖ ☙</div>
+        <p class="closing__compliments" id="closingCompliments">Best Compliments from Ibadat Nizam<br>along with family &amp; friends.</p>
       </div>
       <p class="closing__footer reveal">Made with love by <a href="https://ecometrixsolutions.in/" target="_blank" rel="noopener">Ecometrix Solutions</a></p>
     </section>

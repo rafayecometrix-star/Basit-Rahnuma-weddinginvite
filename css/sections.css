@@ -221,6 +221,80 @@
 }
 
 /* ═══════════════════════════
+   Section 1.5: BISMILLAH
+   ═══════════════════════════ */
+.bismillah {
+  text-align: center;
+  padding: var(--space-3xl) var(--space-xl) var(--space-md);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bismillah__card {
+  position: relative;
+  width: min(520px, 92vw);
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(154, 110, 36, 0.25);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl) var(--space-lg);
+  box-shadow: 0 4px 20px rgba(36, 56, 24, 0.04);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.bismillah__ornament {
+  color: var(--color-gold);
+  font-size: 0.85rem;
+  letter-spacing: 0.35em;
+  opacity: 0.8;
+}
+
+.bismillah__ornament--top {
+  margin-bottom: var(--space-sm);
+}
+
+.bismillah__ornament--bottom {
+  margin-top: var(--space-sm);
+}
+
+.bismillah__arabic {
+  font-family: 'Amiri', 'Traditional Arabic', 'Scheherazade New', serif;
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  color: var(--color-primary);
+  line-height: 1.8;
+  direction: rtl;
+  margin: 0 auto;
+  font-weight: 700;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
+}
+
+.bismillah__divider {
+  width: 64px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+  margin: var(--space-xs) auto var(--space-sm);
+}
+
+.bismillah__english {
+  font-family: var(--font-heading);
+  font-size: clamp(0.95rem, 2.5vw, 1.2rem);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--color-gold);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.bismillah__sub {
+  font-family: var(--font-heading);
+  font-size: clamp(0.9rem, 2.2vw, 1.1rem);
+  font-style: italic;
+  color: var(--color-text-secondary);
+  line-height: 1.4;
+}
+
+/* ═══════════════════════════
    Section 2: COUNTDOWN
    ═══════════════════════════ */
 .countdown {
@@ -516,6 +590,48 @@
   color: var(--color-primary);
   line-height: 1.5;
   font-weight: 500;
+}
+
+.welcome__couple-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xs);
+  margin: var(--space-md) 0;
+}
+
+.welcome__person {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.welcome__lineage {
+  font-family: var(--font-heading);
+  font-size: clamp(0.92rem, 2.2vw, 1.05rem);
+  font-style: italic;
+  color: var(--color-text-secondary);
+  margin-top: 2px;
+  line-height: 1.35;
+  letter-spacing: 0.02em;
+}
+
+.welcome__on-label {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-style: italic;
+  color: var(--color-gold);
+  margin: var(--space-lg) 0 4px;
+}
+
+.welcome__time {
+  font-family: var(--font-heading);
+  font-size: var(--text-base);
+  font-style: italic;
+  color: var(--color-primary);
+  letter-spacing: 0.05em;
+  font-weight: 500;
+  margin-top: 2px;
 }
 
 /* ═══════════════════════════
@@ -833,6 +949,24 @@
   margin-bottom: var(--space-md);
   text-indent: 1.5em;
   position: relative;
+}
+
+/* ═══════════════════════════
+   Section 8: PHOTO GALLERY / CAROUSEL
+   ═══════════════════════════ */
+.photo-gallery {
+  text-align: center;
+  padding: var(--space-3xl) var(--space-lg) var(--space-xl);
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.photo-gallery__title {
+  font-family: var(--font-heading);
+  font-size: var(--text-3xl);
+  font-style: italic;
+  color: var(--color-primary);
+  margin-bottom: var(--space-lg);
 }
 
 /* ─── Story Carousel (4:5 Ratio, Borderless, Flanked by Vines) ─── */
@@ -1267,6 +1401,28 @@
   margin-top: var(--space-md);
   position: relative;
   z-index: 1;
+}
+
+.closing__divider {
+  color: var(--color-gold);
+  font-size: 0.85rem;
+  letter-spacing: 0.35em;
+  margin: var(--space-md) auto var(--space-sm);
+  opacity: 0.8;
+  position: relative;
+  z-index: 1;
+}
+
+.closing__compliments {
+  font-family: var(--font-heading);
+  font-size: clamp(0.95rem, 2.4vw, 1.15rem);
+  font-style: italic;
+  color: var(--color-primary);
+  line-height: 1.5;
+  margin-top: var(--space-xs);
+  position: relative;
+  z-index: 1;
+  font-weight: 500;
 }
 
 .closing__flowers {

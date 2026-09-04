@@ -15,8 +15,11 @@
     if (saved) {
       try {
         const parsed = JSON.parse(saved);
-        C = Object.assign({}, C, parsed);
-        // Also update window.WEDDING_CONFIG for countdown, calendar, etc.
+        if (parsed && parsed.version === WEDDING_CONFIG.version && parsed?.couple?.name1 === "Abdul Basit") {
+          C = Object.assign({}, C, parsed);
+        } else {
+          localStorage.removeItem('wedding_config');
+        }
         window.WEDDING_CONFIG = C;
       } catch (e) {
         console.warn('Could not parse saved wedding_config from localStorage', e);
@@ -51,8 +54,8 @@
       const n1 = (C.couple.name1 || '').trim();
       const n2 = (C.couple.name2 || '').trim();
       let mono = C.couple.monogram;
-      const init1 = n1 ? n1[0].toUpperCase() : 'M';
-      const init2 = n2 ? n2[0].toUpperCase() : 'J';
+      const init1 = n1 ? n1[0].toUpperCase() : 'A';
+      const init2 = n2 ? n2[0].toUpperCase() : 'R';
       const autoMono = `${init1}&${init2}`;
 
       if (!mono || mono === 'M&J' || (n1 && mono[0] !== init1)) {
@@ -64,6 +67,11 @@
       setText('heroName2', C.couple.name2);
       setText('welcomeName1', C.couple.name1);
       setText('welcomeName2', C.couple.name2);
+      if (C.couple.parents) setText('welcomeParents', C.couple.parents);
+      if (C.couple.invitationText) setText('welcomeRequest', C.couple.invitationText);
+      if (C.couple.groomLineage) setText('welcomeLineage1', C.couple.groomLineage);
+      if (C.couple.brideLineage) setText('welcomeLineage2', C.couple.brideLineage);
+      if (C.couple.compliments) setText('closingCompliments', C.couple.compliments);
       setText('closingNames', `${C.couple.name1} & ${C.couple.name2}`);
       setText('scratchTitle', C.couple.welcomeTitle);
       setText('scratchBody', C.couple.welcomeBody);
@@ -101,7 +109,8 @@
       setHTML('ceremonyVenue', C.venue.name.replace(/\s/g, '<br>'));
       setText('ceremonyCity', `${C.venue.city.toUpperCase()}, ${C.venue.country.toUpperCase()}`);
       setText('ceremonyTime', C.venue.ceremonyTime);
-      setText('welcomeDay', `ON ${C.venue.dayOfWeek}`);
+      setText('welcomeDay', `${C.venue.dayOfWeek}, 16TH NOVEMBER, 2026`);
+      setText('welcomeTime', C.venue.ceremonyTime);
       setText('welcomeDateWritten', C.venue.dateWrittenOut);
 
       // Address split
@@ -126,13 +135,12 @@
           if (explicitIcon === 'venue') return '🍽️';
           if (explicitIcon === 'glasses') return '💃';
           const t = title.toLowerCase();
-          if (t.includes('arrive') || t.includes('arrival') || t.includes('guest')) return '🕊️';
-          if (t.includes('ceremony') || t.includes('vow') || t.includes('exchange')) return '💍';
+          if (t.includes('arrive') || t.includes('arrival') || t.includes('guest') || t.includes('welcome')) return '🕊️';
+          if (t.includes('ceremony') || t.includes('vow') || t.includes('exchange') || t.includes('nikaah')) return '💍';
           if (t.includes('drink') || t.includes('reception') || t.includes('cocktail')) return '🥂';
-          if (t.includes('dinner') || t.includes('breakfast') || t.includes('banquet')) return '🍽️';
+          if (t.includes('dinner') || t.includes('breakfast') || t.includes('banquet') || t.includes('food')) return '🍽️';
           if (t.includes('first dance') || t.includes('dance')) return '💃';
-          if (t.includes('food') || t.includes('cake')) return '🍰';
-          if (t.includes('carriage') || t.includes('home') || t.includes('car')) return '🚗';
+          if (t.includes('carriage') || t.includes('home') || t.includes('car') || t.includes('rukhsati') || t.includes('bidai')) return '🚗';
           return '✨';
         };
 
