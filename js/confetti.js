@@ -21,7 +21,7 @@
   resize();
   window.addEventListener('resize', resize);
 
-  const colors = ['#6B94B8', '#C4954A', '#3C5A2A', '#8AACCC', '#D4AF37', '#F0F5F6', '#5C7A3A', '#E8D5B7'];
+  const colors = ['#E89BB2', '#C59B3F', '#F3D29B', '#D47A94', '#9E244E', '#FFF5F7', '#E7C678', '#FFFFFF', '#BA3565'];
 
   class Particle {
     constructor() {

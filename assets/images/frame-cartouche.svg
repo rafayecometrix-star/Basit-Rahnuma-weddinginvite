@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 320" fill="none">
-  <!-- Soft semi-transparent ivory wash fill -->
+  <!-- Soft semi-transparent blush wash fill -->
   <path d="M 90 40 
            C 140 25, 200 35, 250 25 
            C 300 35, 360 25, 410 40 
@@ -11,9 +11,9 @@
            C 60 275, 25 240, 25 200 
            C 15 180, 15 160, 25 140 
            C 25 90, 55 55, 90 40 Z" 
-        fill="rgba(247, 249, 245, 0.85)" />
+        fill="rgba(255, 252, 253, 0.92)" />
 
-  <!-- Outer ornamental border in antique gold/sage -->
+  <!-- Outer ornamental border in Royal Gold -->
   <path d="M 90 40 
            C 140 25, 200 35, 250 25 
            C 300 35, 360 25, 410 40 
@@ -25,9 +25,9 @@
            C 60 275, 25 240, 25 200 
            C 15 180, 15 160, 25 140 
            C 25 90, 55 55, 90 40 Z" 
-        stroke="#8A9E78" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+        stroke="#C59B3F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
 
-  <!-- Inner delicate decorative border with scrolls -->
+  <!-- Inner delicate decorative border with scrolls in soft rose -->
   <path d="M 105 55 
            C 150 45, 195 52, 250 45 
            C 305 52, 350 45, 395 55 
@@ -39,18 +39,18 @@
            C 80 255, 45 225, 45 190 
            C 38 175, 38 160, 45 145 
            C 45 100, 75 70, 105 55 Z" 
-        stroke="#9A6E24" stroke-width="1.6" stroke-dasharray="6,3" />
+        stroke="#D47A94" stroke-width="1.6" stroke-dasharray="6,3" />
 
   <!-- Victorian Corner Flourishes -->
   <!-- Top Center Shell -->
-  <path d="M 235 25 Q 250 15 265 25 Q 250 32 235 25" fill="#9A6E24" opacity="0.6" />
-  <circle cx="250" cy="18" r="3" fill="#9A6E24" />
+  <path d="M 235 25 Q 250 15 265 25 Q 250 32 235 25" fill="#C59B3F" opacity="0.75" />
+  <circle cx="250" cy="18" r="3" fill="#C59B3F" />
   
   <!-- Bottom Center Shell -->
-  <path d="M 235 305 Q 250 315 265 305 Q 250 298 235 305" fill="#9A6E24" opacity="0.6" />
-  <circle cx="250" cy="312" r="3" fill="#9A6E24" />
+  <path d="M 235 305 Q 250 315 265 305 Q 250 298 235 305" fill="#C59B3F" opacity="0.75" />
+  <circle cx="250" cy="312" r="3" fill="#C59B3F" />
 
-  <!-- Left / Right Filigree curls -->
-  <path d="M 20 150 C 10 160, 10 180, 20 190 C 25 180, 25 160, 20 150" stroke="#8A9E78" stroke-width="2" />
-  <path d="M 480 150 C 490 160, 490 180, 480 190 C 475 180, 475 160, 480 150" stroke="#8A9E78" stroke-width="2" />
+  <!-- Left / Right Filigree curls in Rose -->
+  <path d="M 20 150 C 10 160, 10 180, 20 190 C 25 180, 25 160, 20 150" stroke="#D47A94" stroke-width="2" />
+  <path d="M 480 150 C 490 160, 490 180, 480 190 C 475 180, 475 160, 480 150" stroke="#D47A94" stroke-width="2" />
 </svg>

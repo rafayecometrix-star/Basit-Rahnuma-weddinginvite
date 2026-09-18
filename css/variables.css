@@ -5,18 +5,19 @@
 
 :root {
   /* ─── Colors ─── */
-  --color-primary: #243818;        /* Richer, deeper forest green for high contrast */
-  --color-accent: #4A7A9F;         /* Riviera blue */
-  --color-bg: #F3F7F8;             /* Soft powder ice blue */
-  --color-outer-bg: #F3F7F8;       /* Seamless with page - no dark maroon borders */
-  --color-gold: #9A6E24;           /* Bolder, deeper warm gold for clear visibility */
-  --color-button: #466324;         /* Rich olive green */
-  --color-text-secondary: #3D5024; /* Dark olive for clear text */
-  --color-text-body: #2B2E24;      /* Deep charcoal-olive for crisp body reading */
+  --color-primary: #6A1B38;        /* Deep velvet rose for high contrast readability */
+  --color-accent: #D47A94;         /* Elegant dusty rose */
+  --color-bg: #FCF6F7;             /* Soft pearl blush */
+  --color-outer-bg: #FCF6F7;       /* Seamless with blush page */
+  --color-gold: #C59B3F;           /* Royal warm gold */
+  --color-gold-light: #E7C678;     /* Champagne gold highlight */
+  --color-button: #A8385C;         /* Luxe rose berry */
+  --color-text-secondary: #7D3850; /* Warm rosewood for clear text */
+  --color-text-body: #3B2830;      /* Deep espresso rose for crisp body reading */
   --color-white: #FFFFFF;
-  --color-cream: #FCFAF6;
-  --color-border: rgba(74, 122, 159, 0.35);
-  --color-shadow: rgba(0, 0, 0, 0.08);
+  --color-cream: #FDF9FA;          /* Silky warm ivory blush */
+  --color-border: rgba(197, 155, 63, 0.32); /* Warm gold border */
+  --color-shadow: rgba(106, 27, 56, 0.08);  /* Soft rose-tinted shadow */
 
   /* ─── Typography ─── */
   --font-heading: 'Cormorant Garamond', 'Georgia', serif;

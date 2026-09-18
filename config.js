@@ -8,7 +8,7 @@
  */
 
 const WEDDING_CONFIG = {
-  version: "abdul-basit-v1",
+  version: "abdul-basit-pink-gold-v1",
 
   // ═══════════════════════════════════════
   // 💑 COUPLE DETAILS
@@ -113,13 +113,13 @@ const WEDDING_CONFIG = {
   // 🎨 THEME / DESIGN & CAROUSEL
   // ═══════════════════════════════════════
   theme: {
-    primaryColor: "#243818",       // Deep forest green (headings)
-    accentColor: "#4A7A9F",        // Elegant slate/blue accent
-    backgroundColor: "#F3F7F8",    // Powder ice blue
-    outerBackground: "#F3F7F8",    // Seamless with background
-    goldAccent: "#9A6E24",         // Warm copper gold
-    buttonColor: "#466324",        // Olive green (buttons)
-    secondaryText: "#3D5024",      // Dark olive
+    primaryColor: "#6A1B38",       // Deep velvet rose (headings, couple names)
+    accentColor: "#D47A94",        // Elegant dusty rose accent
+    backgroundColor: "#FCF6F7",    // Soft pearl blush background
+    outerBackground: "#FCF6F7",    // Seamless with blush background
+    goldAccent: "#C59B3F",         // Royal warm gold (borders, ornaments, dividers)
+    buttonColor: "#A8385C",        // Luxe rose berry (buttons, interactive elements)
+    secondaryText: "#7D3850",      // Warm rosewood (secondary text, labels)
     carouselSpeed: 3500,           // Story gallery autoplay speed (ms)
     headingFont: "'Cormorant Garamond', 'Georgia', serif",
     bodyFont: "'Inter', 'Helvetica Neue', sans-serif",

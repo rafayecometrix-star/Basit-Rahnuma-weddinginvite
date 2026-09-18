@@ -34,7 +34,7 @@
       if (C.theme.backgroundColor) root.style.setProperty('--color-bg', C.theme.backgroundColor);
 
       // Cleanse outer background: ensure it seamlessly matches background and never falls back to maroon
-      const bg = C.theme.backgroundColor || '#F3F7F8';
+      const bg = C.theme.backgroundColor || '#FCF6F7';
       const outer = (C.theme.outerBackground && !C.theme.outerBackground.toLowerCase().includes('4a1d24'))
         ? C.theme.outerBackground
         : bg;

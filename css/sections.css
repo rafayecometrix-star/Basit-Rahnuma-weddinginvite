@@ -129,9 +129,9 @@
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(240, 245, 246, 0) 0%,
-    rgba(240, 245, 246, 0.1) 40%,
-    rgba(240, 245, 246, 0.2) 100%
+    rgba(252, 246, 247, 0) 0%,
+    rgba(252, 246, 247, 0.15) 40%,
+    rgba(252, 246, 247, 0.45) 100%
   );
   z-index: 1;
 }
@@ -234,11 +234,11 @@
 .bismillah__card {
   position: relative;
   width: min(520px, 92vw);
-  background: rgba(255, 255, 255, 0.45);
-  border: 1px solid rgba(154, 110, 36, 0.25);
-  border-radius: var(--radius-lg);
-  padding: var(--space-xl) var(--space-lg);
-  box-shadow: 0 4px 20px rgba(36, 56, 24, 0.04);
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(197, 155, 63, 0.35);
+  border-radius: var(--border-radius-md);
+  backdrop-filter: blur(4px);
+  box-shadow: 0 4px 20px rgba(106, 27, 56, 0.05);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
 }
@@ -380,7 +380,7 @@
   top: 15%;
   height: 70%;
   width: 1px;
-  background: rgba(60, 90, 42, 0.3);
+  background: rgba(197, 155, 63, 0.35);
 }
 
 .countdown__label {
@@ -441,7 +441,7 @@
   object-fit: contain;
   z-index: 3;
   pointer-events: none;
-  filter: drop-shadow(0 8px 24px rgba(74, 122, 159, 0.18));
+  filter: drop-shadow(0 8px 24px rgba(197, 155, 63, 0.25));
 }
 
 .scratch-photo {
@@ -857,9 +857,9 @@
   width: clamp(34px, 5.5vw, 44px);
   height: clamp(34px, 5.5vw, 44px);
   border-radius: 50%;
-  background: radial-gradient(circle at 35% 35%, #FFFFFF 0%, #F5EDE0 100%);
-  border: 1.5px solid rgba(154, 110, 36, 0.4);
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06);
+  background: radial-gradient(circle at 35% 35%, #FFFFFF 0%, #FDF2F5 100%);
+  border: 1.5px solid rgba(197, 155, 63, 0.45);
+  box-shadow: 0 3px 8px rgba(106, 27, 56, 0.06);
   font-size: clamp(1rem, 2.2vw, 1.3rem);
   margin-left: auto;
   flex-shrink: 0;
@@ -1007,7 +1007,7 @@
   aspect-ratio: 4 / 5;
   overflow: hidden;
   border-radius: var(--border-radius-md);
-  box-shadow: 0 12px 32px rgba(40, 60, 30, 0.12);
+  box-shadow: 0 12px 32px rgba(106, 27, 56, 0.12);
   border: none;
   background: transparent;
   position: relative;
@@ -1035,7 +1035,7 @@
   aspect-ratio: 4 / 5;
   overflow: hidden;
   border-radius: var(--border-radius-md);
-  background: #E8EFF2;
+  background: #FAF0F2;
 }
 
 .carousel-image-card img {
@@ -1064,7 +1064,7 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: rgba(74, 122, 159, 0.3);
+  background: rgba(212, 122, 148, 0.35);
   border: none;
   cursor: pointer;
   transition: all 0.25s ease;
