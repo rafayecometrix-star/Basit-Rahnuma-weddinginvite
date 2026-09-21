@@ -45,14 +45,8 @@
     setVal('cfg-couple-name1', config.couple?.name1);
     setVal('cfg-couple-name2', config.couple?.name2);
     
-    // Auto-update monogram if default or mismatched
-    const n1 = (config.couple?.name1 || '').trim();
-    const n2 = (config.couple?.name2 || '').trim();
-    let mono = config.couple?.monogram;
-    const autoMono = `${n1 ? n1[0].toUpperCase() : 'M'}&${n2 ? n2[0].toUpperCase() : 'J'}`;
-    if (!mono || mono === 'M&J' || (n1 && mono[0] !== n1[0].toUpperCase())) {
-      mono = autoMono;
-    }
+    // Monogram
+    let mono = config.couple?.monogram || 'B&R';
     setVal('cfg-couple-monogram', mono);
     setVal('cfg-couple-couplePhoto', config.couple?.couplePhoto);
     updateCouplePhotoPreview(config.couple?.couplePhoto);

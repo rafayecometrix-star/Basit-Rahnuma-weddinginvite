@@ -8,7 +8,7 @@
  */
 
 const WEDDING_CONFIG = {
-  version: "abdul-basit-pink-gold-v1",
+  version: "abdul-basit-pink-gold-v2",
 
   // ═══════════════════════════════════════
   // 💑 COUPLE DETAILS
@@ -16,14 +16,14 @@ const WEDDING_CONFIG = {
   couple: {
     name1: "Abdul Basit",
     name2: "Rahnuma Fatima",
-    monogram: "A&R",
+    monogram: "B&R",
     weddingDate: "2026-11-16T20:30:00",
     welcomeTitle: "In the name of ALLAH, The Most Merciful & The Most Compassionate",
-    welcomeBody: "Mrs. Sahba Firdaus & Mr. Nizam Alam request the honour of your presence on the occasion of the Wedding Reception of their son.",
-    parents: "Mrs. Sahba Firdaus & Mr. Nizam Alam",
+    welcomeBody: "Mr. Nizam Alam & Mrs. Sahba Firdaus request the honour of your presence on the occasion of the Wedding Reception of their son.",
+    parents: "Mr. Nizam Alam & Mrs. Sahba Firdaus",
     invitationText: "Request the honour of your presence on the occasion of the Wedding Reception of their son",
-    groomLineage: "(Grand S/o Late Mrs. & Mr. Abdul Hameed Sheikh)",
-    brideLineage: "(D/o Mrs. & Mr. Mohd. Nahid)",
+    groomLineage: "(Grand S/o Late Mr. & Mrs. Abdul Hameed Sheikh)",
+    brideLineage: "(D/o Mr. & Mrs. Mohd. Nahid)",
     compliments: "Best Compliments from Ibadat Nizam along with family & friends.",
     couplePhoto: "assets/images/couple-photo.jpg",
     galleryPhotos: [

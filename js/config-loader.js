@@ -50,16 +50,13 @@
 
     // ─── Couple Details ───
     if (C.couple) {
-      // Dynamic Monogram computation
-      const n1 = (C.couple.name1 || '').trim();
-      const n2 = (C.couple.name2 || '').trim();
       let mono = C.couple.monogram;
-      const init1 = n1 ? n1[0].toUpperCase() : 'A';
-      const init2 = n2 ? n2[0].toUpperCase() : 'R';
-      const autoMono = `${init1}&${init2}`;
-
-      if (!mono || mono === 'M&J' || (n1 && mono[0] !== init1)) {
-        mono = autoMono;
+      if (!mono || mono === 'M&J') {
+        const n1 = (C.couple.name1 || '').trim();
+        const n2 = (C.couple.name2 || '').trim();
+        const init1 = n1 ? n1[0].toUpperCase() : 'B';
+        const init2 = n2 ? n2[0].toUpperCase() : 'R';
+        mono = `${init1}&${init2}`;
       }
       setText('waxMonogram', mono);
 
