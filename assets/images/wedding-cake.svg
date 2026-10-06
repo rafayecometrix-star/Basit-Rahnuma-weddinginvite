@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 460" width="100%" height="100%">
+  <defs>
+    <!-- Cake Gradients -->
+    <linearGradient id="cakeTierTop" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFDF9"/>
+      <stop offset="50%" stop-color="#FFF5EC"/>
+      <stop offset="100%" stop-color="#F5E6D8"/>
+    </linearGradient>
+    <linearGradient id="cakeTierMid" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFF7F0"/>
+      <stop offset="50%" stop-color="#FCECE2"/>
+      <stop offset="100%" stop-color="#F8DACD"/>
+    </linearGradient>
+    <linearGradient id="cakeTierBase" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FDDDE6"/>
+      <stop offset="50%" stop-color="#F8C8DC"/>
+      <stop offset="100%" stop-color="#EAA6C1"/>
+    </linearGradient>
+    <linearGradient id="goldStand" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#E8C87A"/>
+      <stop offset="35%" stop-color="#FFF0B8"/>
+      <stop offset="70%" stop-color="#D4A853"/>
+      <stop offset="100%" stop-color="#8B6508"/>
+    </linearGradient>
+    <filter id="cakeDropShadow" x="-20%" y="-10%" width="140%" height="130%">
+      <feDropShadow dx="0" dy="16" stdDeviation="12" flood-color="#5C3D5E" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#cakeDropShadow)">
+    <!-- ═══ GOLD STAND ═══ -->
+    <!-- Base Pedestal Foot -->
+    <path d="M125 435 C125 415 155 410 160 380 L180 380 C185 410 215 415 215 435 Z" fill="url(#goldStand)"/>
+    <ellipse cx="170" cy="435" rx="55" ry="10" fill="url(#goldStand)"/>
+    <!-- Pedestal Plate -->
+    <ellipse cx="170" cy="378" rx="125" ry="16" fill="url(#goldStand)"/>
+    <!-- Scalloped Filigree Trim on Stand -->
+    <path d="M50 378 Q60 392 70 378 Q80 392 90 378 Q100 392 110 378 Q120 392 130 378 Q140 392 150 378 Q160 392 170 378 Q180 392 190 378 Q200 392 210 378 Q220 392 230 378 Q240 392 250 378 Q260 392 270 378 Q280 392 290 378" stroke="url(#goldStand)" stroke-width="3" fill="none"/>
+
+    <!-- ═══ TIER 1 (BOTTOM - BLUSH PINK) ═══ -->
+    <path d="M65 300 L65 365 C65 378 112 388 170 388 C228 388 275 378 275 365 L275 300 Z" fill="url(#cakeTierBase)"/>
+    <ellipse cx="170" cy="300" rx="105" ry="14" fill="#FEE8EF"/>
+    <!-- Gold Leaf Flakes on Bottom Tier -->
+    <circle cx="95" cy="340" r="3" fill="#D4A853"/>
+    <circle cx="115" cy="325" r="4" fill="#E8C87A"/>
+    <circle cx="235" cy="345" r="3.5" fill="#D4A853"/>
+    <circle cx="215" cy="330" r="4.5" fill="#E8C87A"/>
+
+    <!-- ═══ TIER 2 (MIDDLE - PEACH/IVORY) ═══ -->
+    <path d="M90 205 L90 295 C90 307 126 316 170 316 C214 316 250 307 250 295 L250 205 Z" fill="url(#cakeTierMid)"/>
+    <ellipse cx="170" cy="205" rx="80" ry="12" fill="#FFF8F2"/>
+    <!-- Pearl Bead Border on Middle Tier -->
+    <path d="M90 295 C90 307 126 316 170 316 C214 316 250 307 250 295" stroke="#D4A853" stroke-width="2.5" stroke-dasharray="3,3" fill="none"/>
+
+    <!-- ═══ TIER 3 (TOP - IVORY/CREAM) ═══ -->
+    <path d="M115 115 L115 200 C115 210 140 218 170 218 C200 218 225 210 225 200 L225 115 Z" fill="url(#cakeTierTop)"/>
+    <ellipse cx="170" cy="115" rx="55" ry="9" fill="#FFFFFF"/>
+    <!-- Pearl Bead Border on Top Tier -->
+    <path d="M115 200 C115 210 140 218 170 218 C200 218 225 210 225 200" stroke="#D4A853" stroke-width="2" stroke-dasharray="3,3" fill="none"/>
+
+    <!-- ═══ SUGAR FLOWERS & LEAVES (CASCADING) ═══ -->
+    <!-- Top Crown Rose Bouquet -->
+    <g transform="translate(170, 100)">
+      <!-- Gold Leaves -->
+      <path d="M-35 -15 C-50 -35 -20 -45 -10 -25 Z" fill="#D4A853" opacity="0.85"/>
+      <path d="M35 -15 C50 -35 20 -45 10 -25 Z" fill="#D4A853" opacity="0.85"/>
+      <!-- Main Center Sugar Peony -->
+      <circle cx="0" cy="-10" r="22" fill="#FCE8EE" stroke="#F4A7C1" stroke-width="1.5"/>
+      <circle cx="0" cy="-10" r="15" fill="#F8C8DC"/>
+      <circle cx="0" cy="-10" r="8" fill="#FFF"/>
+      <!-- Side Roses -->
+      <circle cx="-22" cy="2" r="14" fill="#FEE8EF" stroke="#F8C8DC"/>
+      <circle cx="22" cy="2" r="14" fill="#FEE8EF" stroke="#F8C8DC"/>
+    </g>
+
+    <!-- Side Cascade Roses on Tier 1 & 2 -->
+    <g transform="translate(85, 290)">
+      <path d="M-15 -10 C-30 -20 -10 -35 0 -15 Z" fill="#D4A853" opacity="0.85"/>
+      <circle cx="0" cy="0" r="18" fill="#FCE8EE" stroke="#F4A7C1" stroke-width="1.5"/>
+      <circle cx="0" cy="0" r="11" fill="#F8C8DC"/>
+      <circle cx="0" cy="0" r="5" fill="#FFF"/>
+    </g>
+
+    <g transform="translate(255, 335)">
+      <path d="M15 -10 C30 -20 10 -35 0 -15 Z" fill="#D4A853" opacity="0.85"/>
+      <circle cx="0" cy="0" r="20" fill="#FCE8EE" stroke="#F4A7C1" stroke-width="1.5"/>
+      <circle cx="0" cy="0" r="13" fill="#F8C8DC"/>
+      <circle cx="0" cy="0" r="6" fill="#FFF"/>
+    </g>
+  </g>
+</svg>

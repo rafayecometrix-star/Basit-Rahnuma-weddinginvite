@@ -1,71 +1,53 @@
-/**
- * BACKGROUND MUSIC
- * Optional music toggle with play/pause control.
- */
+/* ============================================
+   BACKGROUND MUSIC CONTROLLER
+   Floating Music Button & Seamless Looping
+   ============================================ */
 
 (function() {
   'use strict';
 
   const audio = document.getElementById('bgMusic');
-  const btn = document.getElementById('musicBtn');
-
-  if (!audio || !btn) return;
-
+  const toggleBtn = document.getElementById('music-toggle');
   let isPlaying = false;
 
-  function checkMusicEnabled() {
-    if (typeof WEDDING_CONFIG !== 'undefined' && WEDDING_CONFIG.theme) {
-      if (!WEDDING_CONFIG.theme.enableMusic) {
-        btn.classList.add('is-hidden');
-        return false;
+  function play() {
+    if (!audio) return;
+    audio.play().then(() => {
+      isPlaying = true;
+      if (toggleBtn) {
+        toggleBtn.classList.add('is-playing');
+        toggleBtn.innerHTML = '🎵';
       }
-      if (WEDDING_CONFIG.theme.musicFile) {
-        audio.querySelector('source').src = WEDDING_CONFIG.theme.musicFile;
-        audio.load();
-      }
-      btn.classList.remove('is-hidden');
-      return true;
-    }
-    return false;
+    }).catch((err) => {
+      console.log('Audio autoplay prevented or audio file absent:', err);
+    });
   }
 
-  window.startMusic = function() {
-    if (!checkMusicEnabled()) return;
-
-    audio.volume = 0.3;
-    const playPromise = audio.play();
-    if (playPromise) {
-      playPromise.then(() => {
-        isPlaying = true;
-        btn.classList.add('is-playing');
-        btn.textContent = '🎵';
-      }).catch(() => {
-        // Autoplay blocked — user needs to tap music button
-        isPlaying = false;
-      });
+  function pause() {
+    if (!audio) return;
+    audio.pause();
+    isPlaying = false;
+    if (toggleBtn) {
+      toggleBtn.classList.remove('is-playing');
+      toggleBtn.innerHTML = '🔇';
     }
-  };
+  }
 
-  btn.addEventListener('click', () => {
+  function toggle() {
     if (isPlaying) {
-      audio.pause();
-      isPlaying = false;
-      btn.classList.remove('is-playing');
-      btn.textContent = '🔇';
+      pause();
     } else {
-      audio.volume = 0.3;
-      audio.play().then(() => {
-        isPlaying = true;
-        btn.classList.add('is-playing');
-        btn.textContent = '🎵';
-      }).catch(() => {});
+      play();
     }
-  });
-
-  // Check on load
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', checkMusicEnabled);
-  } else {
-    checkMusicEnabled();
   }
+
+  if (toggleBtn) {
+    toggleBtn.addEventListener('click', toggle);
+  }
+
+  window.WeddingMusic = {
+    startMusic: play,
+    stopMusic: pause,
+    toggleMusic: toggle
+  };
 })();

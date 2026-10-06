@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 240 240">
+  <defs>
+    <!-- Royal Metallic Gold Gradients -->
+    <linearGradient id="goldThread" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E8C87A" />
+      <stop offset="35%" stop-color="#D4A853" />
+      <stop offset="70%" stop-color="#F7E6B8" />
+      <stop offset="100%" stop-color="#B8860B" />
+    </linearGradient>
+
+    <linearGradient id="goldShimmer" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFF3D4" />
+      <stop offset="50%" stop-color="#D4A853" />
+      <stop offset="100%" stop-color="#A67C1E" />
+    </linearGradient>
+
+    <!-- Subtle Thread Shadow Filter for 3D Embroidered Effect -->
+    <filter id="embroideryShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0.8" dy="1.2" stdDeviation="0.8" flood-color="#5C3D5E" flood-opacity="0.32" />
+    </filter>
+
+    <!-- Lace Netting Background Tile -->
+    <pattern id="laceNet" width="16" height="16" patternUnits="userSpaceOnUse">
+      <path d="M 0 8 L 8 0 L 16 8 L 8 16 Z" fill="none" stroke="#D4A853" stroke-width="0.5" stroke-opacity="0.25" />
+      <circle cx="8" cy="8" r="0.75" fill="#D4A853" fill-opacity="0.35" />
+    </pattern>
+  </defs>
+
+  <!-- Fine Lace Mesh Netting -->
+  <rect width="240" height="240" fill="url(#laceNet)" />
+
+  <!-- Intricate Royal Embroidered Lace Arabesque Medallion Center -->
+  <g filter="url(#embroideryShadow)" stroke="url(#goldThread)" fill="none">
+    
+    <!-- Central Floral Palmette -->
+    <circle cx="120" cy="120" r="14" stroke-width="1.2" stroke-dasharray="2 1" />
+    <circle cx="120" cy="120" r="8" fill="url(#goldShimmer)" fill-opacity="0.2" stroke-width="1" />
+    <circle cx="120" cy="120" r="2.5" fill="#D4A853" />
+
+    <!-- 8 Petal Embroidered Flower -->
+    <g stroke-width="1.3" fill="url(#goldShimmer)" fill-opacity="0.12">
+      <path d="M 120 106 C 114 96, 126 96, 120 106 Z" />
+      <path d="M 120 134 C 114 144, 126 144, 120 134 Z" />
+      <path d="M 106 120 C 96 114, 96 126, 106 120 Z" />
+      <path d="M 134 120 C 144 114, 144 126, 134 120 Z" />
+      
+      <path d="M 110 110 C 102 102, 112 94, 110 110 Z" />
+      <path d="M 130 110 C 138 102, 128 94, 130 110 Z" />
+      <path d="M 110 130 C 102 138, 112 146, 110 130 Z" />
+      <path d="M 130 130 C 138 138, 128 146, 130 130 Z" />
+    </g>
+
+    <!-- Radiating Arabesque Lace Filigree Tendrils -->
+    <!-- North Tendril -->
+    <path d="M 120 94 C 110 80, 95 75, 95 60 C 95 48, 108 42, 120 54 C 132 42, 145 48, 145 60 C 145 75, 130 80, 120 94" stroke-width="1.4" fill="url(#goldShimmer)" fill-opacity="0.15" />
+    <path d="M 120 54 L 120 32" stroke-width="1.2" stroke-dasharray="2 1.5" />
+    <circle cx="120" cy="30" r="2" fill="#D4A853" />
+    <circle cx="108" cy="52" r="1.5" fill="#D4A853" />
+    <circle cx="132" cy="52" r="1.5" fill="#D4A853" />
+
+    <!-- South Tendril -->
+    <path d="M 120 146 C 110 160, 95 165, 95 180 C 95 192, 108 198, 120 186 C 132 198, 145 192, 145 180 C 145 165, 130 160, 120 146" stroke-width="1.4" fill="url(#goldShimmer)" fill-opacity="0.15" />
+    <path d="M 120 186 L 120 208" stroke-width="1.2" stroke-dasharray="2 1.5" />
+    <circle cx="120" cy="210" r="2" fill="#D4A853" />
+    <circle cx="108" cy="188" r="1.5" fill="#D4A853" />
+    <circle cx="132" cy="188" r="1.5" fill="#D4A853" />
+
+    <!-- West Tendril -->
+    <path d="M 94 120 C 80 110, 75 95, 60 95 C 48 95, 42 108, 54 120 C 42 132, 48 145, 60 145 C 75 145, 80 130, 94 120" stroke-width="1.4" fill="url(#goldShimmer)" fill-opacity="0.15" />
+    <path d="M 54 120 L 32 120" stroke-width="1.2" stroke-dasharray="2 1.5" />
+    <circle cx="30" cy="120" r="2" fill="#D4A853" />
+    <circle cx="52" cy="108" r="1.5" fill="#D4A853" />
+    <circle cx="52" cy="132" r="1.5" fill="#D4A853" />
+
+    <!-- East Tendril -->
+    <path d="M 146 120 C 160 110, 165 95, 180 95 C 192 95, 198 108, 186 120 C 198 132, 192 145, 180 145 C 165 145, 160 130, 146 120" stroke-width="1.4" fill="url(#goldShimmer)" fill-opacity="0.15" />
+    <path d="M 186 120 L 208 120" stroke-width="1.2" stroke-dasharray="2 1.5" />
+    <circle cx="210" cy="120" r="2" fill="#D4A853" />
+    <circle cx="188" cy="108" r="1.5" fill="#D4A853" />
+    <circle cx="188" cy="132" r="1.5" fill="#D4A853" />
+
+    <!-- Ornate Corner Palmettes (Seamless Repeat Connecting Anchors) -->
+    <!-- Top-Left Corner -->
+    <path d="M 0 45 C 20 45, 35 30, 35 15 C 35 5, 25 0, 15 0 C 30 15, 45 20, 45 0" stroke-width="1.3" fill="url(#goldShimmer)" fill-opacity="0.12" />
+    <circle cx="20" cy="20" r="2.5" fill="#D4A853" />
+
+    <!-- Top-Right Corner -->
+    <path d="M 240 45 C 220 45, 205 30, 205 15 C 205 5, 215 0, 225 0 C 210 15, 195 20, 195 0" stroke-width="1.3" fill="url(#goldShimmer)" fill-opacity="0.12" />
+    <circle cx="220" cy="20" r="2.5" fill="#D4A853" />
+
+    <!-- Bottom-Left Corner -->
+    <path d="M 0 195 C 20 195, 35 210, 35 225 C 35 235, 25 240, 15 240 C 30 225, 45 220, 45 240" stroke-width="1.3" fill="url(#goldShimmer)" fill-opacity="0.12" />
+    <circle cx="20" cy="220" r="2.5" fill="#D4A853" />
+
+    <!-- Bottom-Right Corner -->
+    <path d="M 240 195 C 220 195, 205 210, 205 225 C 205 235, 215 240, 225 240 C 210 225, 195 220, 195 240" stroke-width="1.3" fill="url(#goldShimmer)" fill-opacity="0.12" />
+    <circle cx="220" cy="220" r="2.5" fill="#D4A853" />
+
+    <!-- Scalloped Lace Picot Border Along All 4 Perimeter Lines -->
+    <path d="M 0 0 Q 15 6, 30 0 Q 45 6, 60 0 Q 75 6, 90 0 Q 105 6, 120 0 Q 135 6, 150 0 Q 165 6, 180 0 Q 195 6, 210 0 Q 225 6, 240 0" stroke-width="1" stroke-dasharray="3 1.5" />
+    <path d="M 0 240 Q 15 234, 30 240 Q 45 234, 60 240 Q 75 234, 90 240 Q 105 234, 120 240 Q 135 234, 150 240 Q 165 234, 180 240 Q 195 234, 210 240 Q 225 234, 240 240" stroke-width="1" stroke-dasharray="3 1.5" />
+    <path d="M 0 0 Q 6 15, 0 30 Q 6 45, 0 60 Q 6 75, 0 90 Q 6 105, 0 120 Q 6 135, 0 150 Q 6 165, 0 180 Q 6 195, 0 210 Q 6 225, 0 240" stroke-width="1" stroke-dasharray="3 1.5" />
+    <path d="M 240 0 Q 234 15, 240 30 Q 234 45, 240 60 Q 234 75, 240 90 Q 234 105, 240 120 Q 234 135, 240 150 Q 234 165, 240 180 Q 234 195, 240 210 Q 234 225, 240 240" stroke-width="1" stroke-dasharray="3 1.5" />
+
+  </g>
+</svg>

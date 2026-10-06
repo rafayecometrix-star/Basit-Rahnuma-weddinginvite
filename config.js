@@ -113,17 +113,17 @@ const WEDDING_CONFIG = {
   // 🎨 THEME / DESIGN & CAROUSEL
   // ═══════════════════════════════════════
   theme: {
-    primaryColor: "#6A1B38",       // Deep velvet rose (headings, couple names)
-    accentColor: "#D47A94",        // Elegant dusty rose accent
-    backgroundColor: "#FCF6F7",    // Soft pearl blush background
-    outerBackground: "#FCF6F7",    // Seamless with blush background
-    goldAccent: "#C59B3F",         // Royal warm gold (borders, ornaments, dividers)
-    buttonColor: "#A8385C",        // Luxe rose berry (buttons, interactive elements)
-    secondaryText: "#7D3850",      // Warm rosewood (secondary text, labels)
-    carouselSpeed: 3500,           // Story gallery autoplay speed (ms)
-    headingFont: "'Cormorant Garamond', 'Georgia', serif",
-    bodyFont: "'Inter', 'Helvetica Neue', sans-serif",
-    labelFont: "'Montserrat', 'Arial', sans-serif",
+    primaryColor: "#A32A53",       // Rose Magenta (headings, couple names, wax seal)
+    accentColor: "#D4A853",        // Champagne warm gold
+    backgroundColor: "#FAF8F2",    // Soft cream arabesque background
+    outerBackground: "#FAF8F2",    // Seamless cream background
+    goldAccent: "#C5A059",         // Royal gold (borders, ornaments, dividers)
+    buttonColor: "#A32A53",        // Rose Magenta (buttons, interactive elements)
+    secondaryText: "#5C3D5E",      // Deep Plum (secondary text, labels)
+    carouselSpeed: 3500,           // Autoplay speed (ms)
+    headingFont: "'Playfair Display', Georgia, serif",
+    bodyFont: "'Cormorant Garamond', Georgia, serif",
+    labelFont: "'Outfit', sans-serif",
     enableMusic: false,
     musicFile: "assets/audio/background-music.mp3"
   }

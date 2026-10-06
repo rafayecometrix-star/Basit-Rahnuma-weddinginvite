@@ -1,74 +1,78 @@
-/**
- * ENVELOPE ANIMATION
- * Handles the tap-to-open envelope interaction.
- */
+/* ============================================
+   ENVELOPE OPENING CONTROLLER
+   3D 4-Flap Unfolding & Reveal Physics
+   ============================================ */
 
 (function() {
   'use strict';
 
   const envelopeScreen = document.getElementById('envelopeScreen');
   const envelopeWrapper = document.getElementById('envelopeWrapper');
-  const invitation = document.getElementById('invitation');
+  const waxSeal = document.getElementById('waxSeal');
+  const invitation = document.getElementById('invite-content');
 
-  if (!envelopeScreen || !invitation) return;
-
-  let isOpening = false;
+  let hasOpened = false;
 
   function openEnvelope() {
-    if (isOpening) return;
-    isOpening = true;
+    if (hasOpened) return;
+    hasOpened = true;
 
-    // Add opening class — triggers slow realistic flap unfolding & card glide
-    envelopeScreen.classList.add('is-opening');
+    // Step 1: Flap rotates 3D upward & seal dissolves
+    if (envelopeScreen) {
+      envelopeScreen.classList.add('is-opening');
+    }
+    const tapGuide = document.getElementById('envelopeTapGuide');
+    if (tapGuide) {
+      tapGuide.style.display = 'none';
+    }
 
-    // Smooth transition into the invitation card
-    setTimeout(() => {
-      envelopeScreen.classList.add('is-opened');
+    // Trigger celebration sparkle burst
+    if (typeof confetti === 'function') {
+      confetti({
+        particleCount: 45,
+        spread: 75,
+        origin: { y: 0.5 },
+        colors: ['#D4A853', '#F8C8DC', '#FFF9F2', '#E8C87A', '#A32A53']
+      });
+    }
+
+    // Play music if enabled
+    if (window.WeddingMusic && typeof window.WeddingMusic.startMusic === 'function') {
+      window.WeddingMusic.startMusic();
+    }
+
+    // Step 2: Unhide invitation content and notify scratch engine
+    if (invitation) {
       invitation.classList.remove('is-hidden');
+      invitation.classList.add('is-visible');
+      document.body.classList.remove('is-loading');
+      window.dispatchEvent(new CustomEvent('wedding:envelopeOpened'));
+    }
 
-      // Start background music if enabled
-      if (typeof window.startMusic === 'function') {
-        window.startMusic();
+    // Step 3: When top flap has fully unfolded, fade out envelope
+    setTimeout(() => {
+      if (envelopeScreen) {
+        envelopeScreen.classList.add('is-opened');
       }
+    }, 2400);
 
-      // Trigger initial scroll animations
-      if (typeof window.initScrollAnimations === 'function') {
-        window.initScrollAnimations();
+    // Remove overlay from DOM
+    setTimeout(() => {
+      if (envelopeScreen && envelopeScreen.parentNode) {
+        envelopeScreen.parentNode.removeChild(envelopeScreen);
       }
-
-      // Re-initialize scratch canvas now that container is visible with real pixel dimensions
-      if (typeof window.setupScratchCanvas === 'function') {
-        window.setupScratchCanvas();
-      }
-
-      // Allow body scroll
-      document.body.style.overflow = '';
-
-      // Remove envelope from DOM after transition
-      setTimeout(() => {
-        envelopeScreen.remove();
-      }, 900);
-    }, 1800);
+    }, 3800);
   }
 
-  // Prevent body scroll while envelope is showing
-  document.body.style.overflow = 'hidden';
-
-  // Tap/click to open
-  envelopeWrapper.addEventListener('click', openEnvelope);
-  envelopeWrapper.addEventListener('touchend', function(e) {
-    e.preventDefault();
-    openEnvelope();
-  });
-
-  // Keyboard accessibility
-  envelopeWrapper.setAttribute('tabindex', '0');
-  envelopeWrapper.setAttribute('role', 'button');
-  envelopeWrapper.setAttribute('aria-label', 'Tap to open wedding invitation');
-  envelopeWrapper.addEventListener('keydown', function(e) {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
+  if (envelopeWrapper) {
+    envelopeWrapper.addEventListener('click', openEnvelope);
+  }
+  if (waxSeal) {
+    waxSeal.addEventListener('click', (e) => {
+      e.stopPropagation();
       openEnvelope();
-    }
-  });
+    });
+  }
+
+  window.openWeddingEnvelope = openEnvelope;
 })();

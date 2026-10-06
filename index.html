@@ -1,385 +1,443 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-  
-  <title>You're Invited — Wedding Celebration</title>
-  <meta name="description" content="You are cordially invited to celebrate with us. Open this digital invitation to discover all the details." />
-  <meta name="theme-color" content="#FCF6F7" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Abdul Basit & Rahnuma Fatima — Wedding Reception Invitation</title>
+  <meta name="description" content="You are cordially invited to celebrate the Wedding Reception of Abdul Basit & Rahnuma Fatima on Monday, 16th November 2026 at Royal Palace, Jajmau, Kanpur.">
 
   <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="You're Invited — Wedding Celebration" />
-  <meta property="og:description" content="You are cordially invited to celebrate with us." />
+  <meta property="og:title" content="Abdul Basit & Rahnuma Fatima — Wedding Reception Invitation">
+  <meta property="og:description" content="You are cordially invited to celebrate the Wedding Reception of Abdul Basit & Rahnuma Fatima on Monday, 16th November 2026.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/images/hero-bg.jpg">
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Inter:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="css/variables.css" />
-  <link rel="stylesheet" href="css/reset.css" />
-  <link rel="stylesheet" href="css/animations.css" />
-  <link rel="stylesheet" href="css/envelope.css" />
-  <link rel="stylesheet" href="css/sections.css" />
-  <link rel="stylesheet" href="css/components.css" />
-  <link rel="stylesheet" href="css/responsive.css" />
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/envelope.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/particles.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💌</text></svg>">
+
+  <style>
+    body.is-loading { overflow: hidden; }
+    #invite-content { display: none; }
+    #invite-content.is-visible { display: block; }
+  </style>
 </head>
-<body>
+<body class="is-loading">
 
-  <!-- ═══════════════════════════════════
-       SECTION 0: ENVELOPE OPENING
-       ═══════════════════════════════════ -->
+  <!-- ===========================
+       4-FLAP 3D LUXURY ENVELOPE
+       =========================== -->
   <div class="envelope-screen" id="envelopeScreen">
-    <div class="envelope-wrapper" id="envelopeWrapper">
+    <div class="envelope-wrapper" id="envelopeWrapper" role="button" tabindex="0" aria-label="Tap to open the wedding invitation">
       <div class="envelope-body">
-        <!-- Flaps -->
         <div class="envelope-flap envelope-flap--left"></div>
-        <div class="envelope-flap--right envelope-flap"></div>
-        <div class="envelope-flap envelope-flap--bottom"></div>
-        <div class="envelope-flap envelope-flap--top"></div>
-      </div>
+        <div class="envelope-flap envelope-flap--right"></div>
+        <div class="envelope-flap envelope-flap--bottom">
+          <div class="flap-foil-trim flap-foil-trim--bottom"></div>
+        </div>
+        <div class="envelope-flap envelope-flap--top">
+          <div class="flap-foil-trim flap-foil-trim--top"></div>
+        </div>
 
-      <!-- Wax Seal -->
-      <div class="wax-seal" id="waxSeal">
-        <div class="wax-seal__fallback">
-          <span class="wax-seal__monogram" id="waxMonogram">B&R</span>
+        <!-- Pulsating Tap Guide with Index Finger Indicator -->
+        <div class="envelope-tap-guide" id="envelopeTapGuide" aria-hidden="true">
+          <span class="envelope-tap-guide__finger">👆</span>
+          <span class="envelope-tap-guide__text">Tap to Open</span>
+        </div>
+
+        <!-- 3D Circular Wax Seal with B&R Monogram -->
+        <div class="wax-seal" id="waxSeal" role="button" aria-label="Wax Seal">
+          <div class="wax-seal__rope-ring"></div>
+          <span class="wax-seal__monogram">B&R</span>
         </div>
       </div>
     </div>
-
-    <span class="envelope-tap-text">TAP TO OPEN</span>
   </div>
 
-  <!-- ═══════════════════════════════════
-       MAIN INVITATION
-       ═══════════════════════════════════ -->
-  <main class="invitation is-hidden" id="invitation">
+  <!-- ===========================
+       MAIN INVITATION CONTENT
+       =========================== -->
+  <main id="invite-content" class="invitation is-hidden">
 
-    <!-- ═══ SECTION 1: HERO ═══ -->
-    <section class="section section--no-padding hero" id="sectionHero">
-      <!-- Animated Floating Sky Clouds -->
+    <!-- ====== 1. HERO SECTION ====== -->
+    <section id="hero" class="section hero-section">
       <div class="hero__clouds" aria-hidden="true">
         <div class="hero__cloud hero__cloud--1"></div>
         <div class="hero__cloud hero__cloud--2"></div>
         <div class="hero__cloud hero__cloud--3"></div>
       </div>
 
-      <div class="hero__bg-image" id="heroBg">
-        <img src="assets/images/floral-arch.png" alt="Floral arch" class="hero__bg-image" loading="eager" id="heroArchImg" />
+      <div class="hero__bg">
+        <img src="assets/images/hero-bg.jpg" alt="Floral wedding arch background" loading="eager">
+        <div class="hero__overlay"></div>
       </div>
-      <div class="hero__overlay"></div>
-      <div class="hero__content reveal-stagger">
-        <p class="hero__subtitle">WEDDING RECEPTION</p>
-        <h1 class="hero__name" id="heroName1">Abdul Basit</h1>
-        <span class="hero__ampersand">&</span>
-        <h1 class="hero__name" id="heroName2">Rahnuma Fatima</h1>
-        <div class="hero__date" id="heroDate">
-          <span>16</span>
-          <span>NOV</span>
-          <span>2026</span>
-        </div>
+
+      <div class="hero__content">
+        <p class="hero__bismillah-arabic" dir="rtl">بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</p>
+        <p class="hero__bismillah-sub">In the name of Allah, the Most Gracious, the Most Merciful</p>
+        <p class="hero__invitation-text">With the blessings of Allah and our families,<br>we request the honour of your presence to celebrate the Wedding Reception of our son.</p>
+        <h1 class="hero__names" id="hero-names">
+          Abdul Basit
+          <span class="hero__ampersand">&</span>
+          Rahnuma Fatima
+        </h1>
+        <p class="hero__venue" id="hero-venue">Wedding Reception • Monday, 16 November 2026</p>
       </div>
-      <div class="hero__discover bounce-arrow" id="discoverBtn">
+
+      <div class="hero__discover" id="discoverBtn" role="button" tabindex="0">
         <span>DISCOVER</span>
         <span class="hero__discover-arrow">↓</span>
       </div>
     </section>
 
-    <!-- ═══ SECTION 1.5: BISMILLAH ═══ -->
-    <section class="section bismillah reveal" id="sectionBismillah">
-      <div class="bismillah__card">
-        <div class="bismillah__ornament bismillah__ornament--top">❧ ❖ ☙</div>
-        <p class="bismillah__arabic" dir="rtl" lang="ar">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</p>
-        <div class="bismillah__divider"></div>
-        <p class="bismillah__english">In the name of ALLAH</p>
-        <p class="bismillah__sub">The Most Merciful &amp; The Most Compassionate</p>
-        <div class="bismillah__ornament bismillah__ornament--bottom">❧ ❖ ☙</div>
-      </div>
-    </section>
+    <!-- ====== 2. OUR NIKAH: SAVE THE DATE & LIVE COUNTDOWN ====== -->
+    <section id="our-nikah" class="section date-section">
+      <div class="section__inner reveal-on-scroll">
+        <div class="ornament-divider">❧ ❖ ☙</div>
+        <span class="section__badge">✦ OUR NIKAH ✦</span>
+        <h2 class="section__title">Our Celebration</h2>
+        
+        <!-- Interactive Save-the-Date Scratch Card -->
+        <div class="scratch-card-wrapper">
+          <div class="scratch-card-container" id="date-scratch-container">
+            <img src="assets/images/frame-cartouche.svg" alt="Ornate gold cartouche frame" class="cartouche-frame-svg" loading="lazy">
 
-    <!-- ═══ SECTION 2: COUNTDOWN ═══ -->
-    <section class="section countdown" id="sectionCountdown">
-      <div class="countdown__frame reveal--scale">
-        <!-- Transparent Vector Ornate Cartouche (zero white box) -->
-        <img src="assets/images/frame-cartouche.svg" alt="" class="countdown__frame-image" loading="lazy" />
-        <div class="countdown__inner">
-          <h2 class="countdown__title">Countdown</h2>
-          <p class="countdown__date-label" id="countdownDateLabel">UNTIL 16 NOVEMBER 2026</p>
-          <div class="countdown__digits" id="countdownDigits">
-            <div class="countdown__unit">
-              <span class="countdown__number" id="countDays">00</span>
+            <div class="scratch-revealed-content" id="date-revealed-content">
+              <span class="date-badge">✦ SAVE THE DATE ✦</span>
+              <h2 class="date-revealed-main" id="revealed-date-text">Monday, 16 November 2026</h2>
+              <p class="date-revealed-hijri">5 Jumada al-Awwal 1448 AH</p>
+              <div class="date-gold-line"></div>
+              <p class="date-revealed-venue">Royal Palace • Galla Godam, Jajmau, Kanpur</p>
+            </div>
+
+            <canvas class="scratch-canvas" id="date-scratch-canvas"></canvas>
+          </div>
+        </div>
+
+        <!-- Live Countdown nestled directly inside Our Nikah -->
+        <div class="countdown-nested" id="countdown">
+          <p class="countdown__subtitle">Counting Down Until Our Blessed Union</p>
+          <div class="countdown__boxes" id="countdown-boxes">
+            <div class="countdown__box">
+              <span class="countdown__number" id="countdown-days">00</span>
               <span class="countdown__label">Days</span>
             </div>
-            <div class="countdown__unit">
-              <span class="countdown__number" id="countHours">00</span>
+            <div class="countdown__box">
+              <span class="countdown__number" id="countdown-hours">00</span>
               <span class="countdown__label">Hours</span>
             </div>
-            <div class="countdown__unit">
-              <span class="countdown__number" id="countMinutes">00</span>
+            <div class="countdown__box">
+              <span class="countdown__number" id="countdown-minutes">00</span>
               <span class="countdown__label">Minutes</span>
+            </div>
+            <div class="countdown__box">
+              <span class="countdown__number" id="countdown-seconds">00</span>
+              <span class="countdown__label">Seconds</span>
+            </div>
+          </div>
+          <p class="countdown__message">We look forward to welcoming you with warmth and joy</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Botanical Divider ─── -->
+    <div class="section-floral-divider" aria-hidden="true">
+      <img src="assets/images/floral-trio-divider.svg" alt="Botanical rose divider" loading="lazy">
+    </div>
+
+    <!-- ====== 3. THE VERSE (SURAH AR-RUM 30:21) ====== -->
+    <section id="the-verse" class="section bismillah-section">
+      <div class="section__inner reveal-on-scroll">
+        <div class="ornament-divider">❧ ❖ ☙</div>
+        <span class="section__badge">✦ THE VERSE ✦</span>
+        <h2 class="section__title">The Verse</h2>
+        <div class="bismillah__card">
+          <p class="bismillah__arabic" dir="rtl">بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</p>
+          <p class="bismillah__sub">In the name of Allah, the Most Gracious, the Most Merciful</p>
+          <div class="gold-divider-line"></div>
+          <p class="bismillah__verse" dir="rtl">
+            وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً ۚ إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِّقَوْمٍ يَتَفَكَّرُونَ
+          </p>
+          <p class="bismillah__translation">
+            "And among His Signs is that He created for you mates from among yourselves, that you may dwell in tranquility with them, and He has put love and mercy between your hearts. Verily in that are Signs for those who reflect."
+          </p>
+          <p class="bismillah__cite">— Surah Ar-Rum (30:21)</p>
+          <div class="ornament-divider" style="margin-top:10px; margin-bottom:0;">❧ ❖ ☙</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Botanical Divider ─── -->
+    <div class="section-floral-divider" aria-hidden="true">
+      <img src="assets/images/floral-trio-divider.svg" alt="Botanical rose divider" loading="lazy">
+    </div>
+
+    <!-- ====== 4. THE FAMILIES ====== -->
+    <section id="the-families" class="section couple-section">
+      <div class="section__inner reveal-on-scroll">
+        <div class="ornament-divider">❧ ❖ ☙</div>
+        <span class="section__badge">✦ THE FAMILIES ✦</span>
+        <h2 class="section__title">The Families</h2>
+        <div class="couple__card" id="couple-card">
+          <!-- Bride -->
+          <div class="couple__block">
+            <span class="couple__role-tag">THE BRIDE</span>
+            <h2 class="couple__name" id="bride-name">RAHNUMA FATIMA</h2>
+            <p class="couple__lineage">(D/o Mr. &amp; Mrs. Mohd. Nahid)</p>
+          </div>
+
+          <!-- Cursive Flourish 'and' -->
+          <div class="couple__cursive-and">
+            <span>with</span>
+          </div>
+
+          <!-- Groom -->
+          <div class="couple__block">
+            <span class="couple__role-tag">THE GROOM</span>
+            <h2 class="couple__name" id="groom-name">ABDUL BASIT</h2>
+            <p class="couple__lineage">(Grand S/o Late Mr. &amp; Mrs. Abdul Hameed Sheikh)</p>
+            <p class="couple__parent-text">Son of Mr. Nizam Alam &amp; Mrs. Sahba Firdaus</p>
+          </div>
+
+          <!-- Invitation Subtitle -->
+          <p class="couple__invite-note">
+            Mr. Nizam Alam &amp; Mrs. Sahba Firdaus request the honour of your presence on the occasion of the Wedding Reception of their son.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Botanical Divider ─── -->
+    <div class="section-floral-divider" aria-hidden="true">
+      <img src="assets/images/floral-trio-divider.svg" alt="Botanical rose divider" loading="lazy">
+    </div>
+
+    <!-- ====== 5. THE CELEBRATION (TIMELINE + VENUE) ====== -->
+    <section id="the-celebration" class="section schedule-section">
+      <div class="section__inner reveal-on-scroll">
+        <div class="ornament-divider">❧ ❖ ☙</div>
+        <span class="section__badge">✦ THE CELEBRATION ✦</span>
+        <h2 class="section__title">The Celebration</h2>
+        <p class="schedule__date">Monday, 16th November 2026</p>
+
+        <!-- Celebration Timeline -->
+        <div class="timeline">
+          <div class="timeline__item">
+            <span class="timeline__time">20:30</span>
+            <div class="timeline__node"></div>
+            <span class="timeline__event">Guests Arrive &amp; Welcome</span>
+            <div class="timeline__icon-badge">🕊️</div>
+          </div>
+
+          <div class="timeline__item">
+            <span class="timeline__time">21:00</span>
+            <div class="timeline__node"></div>
+            <span class="timeline__event">Nikaah Ceremony</span>
+            <div class="timeline__icon-badge">✨</div>
+          </div>
+
+          <div class="timeline__item">
+            <span class="timeline__time">21:30</span>
+            <div class="timeline__node"></div>
+            <span class="timeline__event">Dinner</span>
+            <div class="timeline__icon-badge">🍽️</div>
+          </div>
+
+          <div class="timeline__item">
+            <span class="timeline__time">23:00</span>
+            <div class="timeline__node"></div>
+            <span class="timeline__event">Rukhsati / Bidai</span>
+            <div class="timeline__icon-badge">🌸</div>
+          </div>
+        </div>
+
+        <!-- Venue Card directly inside The Celebration -->
+        <div class="venue-card-wrapper" id="events">
+          <div class="venue-card">
+            <div class="ornament-divider" style="margin-bottom:6px;">❧ ❖ ☙</div>
+            <h2 class="venue-card__title">Wedding<br>&amp; Reception</h2>
+            <div class="gold-divider-line"></div>
+            
+            <p class="venue-card__where">WHERE WE CELEBRATE</p>
+            <h3 class="venue-card__name" id="nikah-venue">Royal Palace</h3>
+            <p class="venue-card__city">JAJMAU, KANPUR, INDIA</p>
+
+            <div class="venue-card__datetime">
+              <div class="venue-card__datetime-col">
+                <span class="bold">Monday, 16th</span><br>
+                <span>of November, 2026</span>
+              </div>
+              <div class="venue-card__datetime-col">
+                <span class="bold">8:30 PM</span><br>
+                <span>onwards</span>
+              </div>
+            </div>
+
+            <div class="gold-divider-line"></div>
+            <p class="venue-card__address" id="nikah-address">Galla Godam, Jajmau</p>
+            <p class="venue-card__state">Kanpur, Uttar Pradesh, India</p>
+
+            <div class="venue-card__painting">
+              <img src="assets/images/venue-watercolor.jpg" alt="Royal Palace Jajmau Kanpur" loading="lazy">
+            </div>
+
+            <div class="venue-card__action">
+              <a href="https://www.google.com/maps/place/Royal+Palace/@26.4304798,80.3934503,17z/data=!3m1!4b1!4m6!3m5!1s0x399c40e305db2175:0x907b49ea2c4d1a13!8m2!3d26.4304798!4d80.3960252!16s%2Fg%2F11sbr0d7fs" class="btn btn--gold btn--sm" id="nikah-maps" target="_blank" rel="noopener">
+                📍 Open in Google Maps
+              </a>
             </div>
           </div>
         </div>
       </div>
-      <!-- Transparent Vector Floral Spray (zero white box) -->
-      <img src="assets/images/floral-spray.svg" alt="Botanical spray" class="countdown__flowers reveal" loading="lazy" />
     </section>
 
+    <!-- ─── Botanical Divider ─── -->
+    <div class="section-floral-divider" aria-hidden="true">
+      <img src="assets/images/floral-trio-divider.svg" alt="Botanical rose divider" loading="lazy">
+    </div>
 
-
-    <!-- ═══ SECTION 4: FORMAL WELCOME ═══ -->
-    <section class="section welcome" id="sectionWelcome">
-      <img src="assets/images/hydrangea-garland.png" alt="Hydrangea garland" class="welcome__garland reveal" loading="lazy" />
-      <div class="reveal-stagger">
-        <h2 class="welcome__title">Welcome</h2>
-        <p class="welcome__families" id="welcomeParents">Mr. Nizam Alam &amp; Mrs. Sahba Firdaus</p>
-        <p class="welcome__request" id="welcomeRequest">Request the honour of your presence<br>on the occasion of the Wedding Reception of their son</p>
-        
-        <div class="welcome__couple-group">
-          <div class="welcome__person">
-            <h3 class="welcome__name" id="welcomeName1">Abdul Basit</h3>
-            <p class="welcome__lineage" id="welcomeLineage1">(Grand S/o Late Mr. &amp; Mrs. Abdul Hameed Sheikh)</p>
+    <!-- ====== 6. A DUA FOR US ====== -->
+    <section id="a-dua-for-us" class="section dua-section">
+      <div class="section__inner reveal-on-scroll">
+        <div class="ornament-divider">❧ ❖ ☙</div>
+        <span class="section__badge">✦ A DUA FOR US ✦</span>
+        <h2 class="section__title">A Dua for Us</h2>
+        <div class="dua__card">
+          <h3 class="dua__title">By the Grace of Allah</h3>
+          <div class="gold-divider-line"></div>
+          <div class="dua__paragraphs" id="story-paragraphs">
+            <p class="dua__p">
+              Alhamdulillah, we are grateful to Allah for bringing us to this beautiful milestone.
+            </p>
+            <p class="dua__p">
+              As we begin our journey together, we pray that our union is blessed with <em>sakinah</em>, <em>mawaddah</em> and <em>rahmah</em>, and that we continue to grow together in faith, mutual love and harmony.
+            </p>
+            <p class="dua__p dua__p--highlight">
+              Please keep us in your sincere duas.
+            </p>
           </div>
-
-          <span class="welcome__and">with</span>
-
-          <div class="welcome__person">
-            <h3 class="welcome__name" id="welcomeName2">Rahnuma Fatima</h3>
-            <p class="welcome__lineage" id="welcomeLineage2">(D/o Mr. &amp; Mrs. Mohd. Nahid)</p>
-          </div>
-        </div>
-
-        <p class="welcome__on-label">on</p>
-        <p class="welcome__day" id="welcomeDay">Monday, 16th November, 2026</p>
-        <p class="welcome__time" id="welcomeTime">8:30 PM onwards</p>
-      </div>
-    </section>
-
-    <!-- ═══ SECTION 5: CEREMONY & RECEPTION ═══ -->
-    <section class="section ceremony" id="sectionCeremony">
-      <div class="ceremony__card reveal">
-        <img src="assets/images/hydrangea-garland.png" alt="" class="ceremony__hedge" loading="lazy" />
-        <h2 class="ceremony__title">Wedding<br>&amp; Reception</h2>
-        <div class="ceremony__divider"></div>
-        <p class="ceremony__where">WHERE WE CELEBRATE</p>
-        <h3 class="ceremony__venue" id="ceremonyVenue">Royal Palace</h3>
-        <p class="ceremony__city" id="ceremonyCity">JAJMAU, KANPUR</p>
-        <div class="ceremony__datetime">
-          <div class="ceremony__date-col" id="ceremonyDate">
-            <span>Monday, 16th</span><br>
-            <span>of November, 2026</span>
-          </div>
-          <div class="ceremony__time-col" id="ceremonyTime">8:30 PM onwards</div>
-        </div>
-        <div class="ceremony__divider"></div>
-        <p class="ceremony__address" id="ceremonyAddress">Galla Godam, Jajmau</p>
-        <p class="ceremony__address-sub" id="ceremonyAddressSub">Kanpur, Uttar Pradesh</p>
-        <img src="assets/images/venue-illustration.png" alt="Venue" class="ceremony__venue-image" loading="lazy" />
-      </div>
-
-      <!-- Action Buttons -->
-      <div class="action-buttons">
-        <div class="dropdown-wrapper">
-          <button class="action-btn" id="btnOpenMaps" aria-haspopup="true" aria-expanded="false">
-            <span class="action-btn__icon">◎</span>
-            OPEN IN MAPS
-          </button>
-          <div class="dropdown" id="dropdownMaps">
-            <a class="dropdown__item" id="linkGoogleMaps" href="https://www.google.com/maps/place/Royal+Palace/@26.4304798,80.3934503,17z/data=!3m1!4b1!4m6!3m5!1s0x399c40e305db2175:0x907b49ea2c4d1a13!8m2!3d26.4304798!4d80.3960252!16s%2Fg%2F11sbr0d7fs" target="_blank" rel="noopener">Google Maps</a>
-            <a class="dropdown__item" id="linkAppleMaps" href="https://maps.apple.com/?q=Royal+Palace+Jajmau+Kanpur" target="_blank" rel="noopener">Apple Maps</a>
-          </div>
-        </div>
-        <div class="dropdown-wrapper">
-          <button class="action-btn" id="btnAddCalendar" aria-haspopup="true" aria-expanded="false">
-            <span class="action-btn__icon">📅</span>
-            ADD TO CALENDAR
-          </button>
-          <div class="dropdown" id="dropdownCalendar">
-            <button class="dropdown__item" id="linkGoogleCalendar">Google Calendar</button>
-            <button class="dropdown__item" id="linkAppleCalendar">Apple Calendar</button>
-          </div>
+          <div class="ornament-divider" style="margin-top:14px; margin-bottom:0;">❧ ❖ ☙</div>
         </div>
       </div>
     </section>
 
+    <!-- ─── Botanical Divider ─── -->
+    <div class="section-floral-divider" aria-hidden="true">
+      <img src="assets/images/floral-trio-divider.svg" alt="Botanical rose divider" loading="lazy">
+    </div>
 
+    <!-- ====== 7. RSVP FORM ====== -->
+    <section id="rsvp" class="section rsvp-section">
+      <div class="section__inner reveal-on-scroll">
+        <div class="ornament-divider">❧ ❖ ☙</div>
+        <span class="section__badge">✦ RSVP ✦</span>
+        <h2 class="section__title">Kindly Confirm Your Presence</h2>
+        <p class="section__subtitle">We look forward to celebrating with you</p>
 
-    <!-- ═══ SECTION 7: OUR STORY ═══ -->
-    <section class="section story" id="sectionStory">
-      <img src="assets/images/wedding-cake.png" alt="Wedding cake" class="story__cake float reveal" loading="lazy" style="mix-blend-mode: multiply;" />
-      <h2 class="story__title reveal" id="storyTitle">How it all<br>started…</h2>
-      <button class="story__toggle reveal" id="storyToggle">
-        <span id="storyToggleText">Our Story</span>
-      </button>
-      <div class="story__content" id="storyContent">
-        <div id="storyParagraphs">
-          <!-- Paragraphs injected by JS from config -->
-        </div>
-      </div>
-    </section>
+        <!-- RSVP Form Card -->
+        <div class="rsvp__card" id="rsvp-card">
+          <form id="rsvp-form" novalidate>
+            <div class="form-group">
+              <label class="form-label" for="rsvp-name">Your Full Name *</label>
+              <input class="form-input" type="text" id="rsvp-name" name="name" placeholder="Enter your full name" required autocomplete="name">
+            </div>
 
+            <div class="form-group">
+              <label class="form-label" for="rsvp-contact">Phone / WhatsApp <span style="opacity:0.6">(optional)</span></label>
+              <input class="form-input" type="text" id="rsvp-contact" name="contact" placeholder="+91 98765 43210" autocomplete="tel">
+            </div>
 
+            <div class="form-group">
+              <label class="form-label">Will you attend?</label>
+              <div class="rsvp__attendance" id="rsvp-attendance">
+                <div class="rsvp__attendance-option is-selected" data-value="yes" role="button" tabindex="0">
+                  <span class="emoji">🌸</span>
+                  <span class="label">Joyfully Attending</span>
+                </div>
+                <div class="rsvp__attendance-option" data-value="no" role="button" tabindex="0">
+                  <span class="emoji">🕊️</span>
+                  <span class="label">Regretfully Declining</span>
+                </div>
+                <div class="rsvp__attendance-option" data-value="maybe" role="button" tabindex="0">
+                  <span class="emoji">✨</span>
+                  <span class="label">Not Sure Yet</span>
+                </div>
+              </div>
+              <input type="hidden" id="rsvp-attending" name="attending" value="yes">
+            </div>
 
-    <!-- ═══ SECTION 9: THE WEEKEND ═══ -->
-    <section class="section weekend" id="sectionWeekend">
-      <div class="weekend__medallion reveal--scale">
-        <img src="assets/images/medallion-scene.png" alt="Weekend scene" loading="lazy" />
-      </div>
-      <h2 class="weekend__title reveal" id="weekendTitle">The Weekend</h2>
-      <div class="weekend__divider"></div>
-      <p class="weekend__subtitle reveal" id="weekendSubtitle">JOIN US THE EVENING BEFORE</p>
-      <div class="weekend__card reveal">
-        <h3 class="weekend__event-name" id="weekendEventName">Restaurant César</h3>
-        <p class="weekend__event-location" id="weekendLocation">CAP D'ANTIBES, FRANCE</p>
-        <div class="weekend__event-datetime">
-          <span class="weekend__event-date" id="weekendDate">Saturday | 26<br>September 2026</span>
-          <span class="weekend__event-time" id="weekendTime">5:30 – 8:30<br>PM</span>
-        </div>
-        <div class="ceremony__divider" style="margin: var(--space-md) auto;"></div>
-        <p class="weekend__event-address" id="weekendAddress">Plage Keller, Chemin de la Garoupe</p>
-        <p class="weekend__event-address-sub" id="weekendAddressSub">06160 Antibes, France</p>
-        <div class="weekend__car-wrapper">
-          <img src="assets/images/vintage-car.png" alt="Vintage car" class="weekend__car" loading="lazy" />
-        </div>
-      </div>
-      <div class="action-buttons" style="margin-top: var(--space-xl);">
-        <div class="dropdown-wrapper">
-          <button class="action-btn" id="btnWeekendMaps">
-            <span class="action-btn__icon">◎</span>
-            OPEN IN MAPS
-          </button>
-          <div class="dropdown" id="dropdownWeekendMaps">
-            <a class="dropdown__item" id="linkWeekendGoogleMaps" href="#" target="_blank" rel="noopener">Google Maps</a>
-            <a class="dropdown__item" id="linkWeekendAppleMaps" href="#" target="_blank" rel="noopener">Apple Maps</a>
-          </div>
-        </div>
-        <div class="dropdown-wrapper">
-          <button class="action-btn" id="btnWeekendCalendar">
-            <span class="action-btn__icon">📅</span>
-            ADD TO CALENDAR
-          </button>
-          <div class="dropdown" id="dropdownWeekendCalendar">
-            <button class="dropdown__item" id="linkWeekendGCal">Google Calendar</button>
-            <button class="dropdown__item" id="linkWeekendACal">Apple Calendar</button>
+            <div class="form-group">
+              <label class="form-label">Number of Guests</label>
+              <div class="rsvp__guest-counter">
+                <button type="button" class="rsvp__counter-btn" id="guest-minus" aria-label="Decrease guests">−</button>
+                <span class="rsvp__counter-value" id="guest-count">1</span>
+                <button type="button" class="rsvp__counter-btn" id="guest-plus" aria-label="Increase guests">+</button>
+              </div>
+              <input type="hidden" id="rsvp-guests" name="guests" value="1">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="rsvp-message">Leave us a Dua or Warm Wish <span style="opacity:0.6">(optional)</span></label>
+              <textarea class="form-textarea" id="rsvp-message" name="message" placeholder="Share your heartfelt prayers, duas, or congratulations..." rows="3"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn--gold" id="rsvp-submit" style="width:100%; margin-top:var(--space-sm);">
+              ✨ Send RSVP
+            </button>
+          </form>
+
+          <div class="rsvp__success" id="rsvp-success">
+            <span class="rsvp__success-icon">🤲</span>
+            <h3 class="rsvp__success-title">Jazakumullahu Khairan.</h3>
+            <p class="rsvp__success-text">Your presence and prayers mean the world to us.<br>We can't wait to celebrate this blessed occasion together!</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ═══ SECTION 10: TRAVEL & STAY ═══ -->
-    <section class="section travel" id="sectionTravel">
-      <h2 class="travel__title reveal" id="travelTitle">Travel & Stay</h2>
-      <p class="travel__airport reveal" id="travelAirport">We recommend flying into Nice Côte d'Azur International Airport (NCE). The venue is approximately 30 minutes by car.</p>
-      <div id="hotelCards">
-        <!-- Hotel cards injected by JS from config -->
+    <!-- ====== 8. FOOTER & COMPLIMENTS ====== -->
+    <footer id="footer">
+      <div class="section__inner">
+        <div class="ornament-divider">❧ ❖ ☙</div>
+        <p class="footer__names">Abdul Basit &amp; Rahnuma Fatima</p>
+        <p class="footer__compliments">Best Compliments from Ibadat Nizam along with family &amp; friends.</p>
+        <p class="footer__credit">With Sincere Duas &amp; Warm Gratitude</p>
       </div>
-    </section>
-
-    <!-- ═══ SECTION 11: RSVP ═══ -->
-    <section class="section rsvp" id="sectionRsvp">
-      <h2 class="rsvp__title reveal">RSVP</h2>
-      <div class="rsvp__divider"></div>
-      <p class="rsvp__deadline reveal" id="rsvpDeadline">KINDLY RESPOND BY 15 JULY 2026</p>
-
-      <form class="form" id="rsvpForm">
-        <!-- Full Name -->
-        <div class="form__group reveal">
-          <label class="form__label form__label--required" for="rsvpName">Full name</label>
-          <input type="text" class="form__input" id="rsvpName" name="fullName" placeholder="Enter your full name" required />
-        </div>
-
-        <!-- Attending -->
-        <div class="form__group reveal">
-          <label class="form__label form__label--required">Will you be attending?</label>
-          <div class="radio-group">
-            <label class="radio-option">
-              <input type="radio" name="attending" value="yes" checked />
-              <span>Joyfully accepts</span>
-            </label>
-            <label class="radio-option">
-              <input type="radio" name="attending" value="no" />
-              <span>Regretfully declines</span>
-            </label>
-          </div>
-        </div>
-
-        <!-- Guest Count -->
-        <div class="form__group reveal" id="guestCountGroup">
-          <label class="form__label form__label--required">
-            <span class="guest-count-label">
-              <span class="guest-count-label__icon">👥</span>
-              Number of guests attending
-            </span>
-          </label>
-          <div class="stepper" id="guestStepper">
-            <button type="button" class="stepper__btn" id="stepperMinus" aria-label="Decrease">−</button>
-            <span class="stepper__value" id="stepperValue">1</span>
-            <button type="button" class="stepper__btn" id="stepperPlus" aria-label="Increase">+</button>
-          </div>
-        </div>
-
-        <!-- Message -->
-        <div class="form__group reveal">
-          <label class="form__label" for="rsvpMessage">A personal message for the couple</label>
-          <textarea class="form__input form__textarea" id="rsvpMessage" name="message" placeholder="Share a wish, a memory, or anything you'd like us to read..."></textarea>
-        </div>
-
-        <!-- Submit -->
-        <button type="submit" class="submit-btn reveal" id="rsvpSubmit">
-          <span class="submit-btn__icon">✈</span>
-          SEND RSVP
-        </button>
-      </form>
-
-      <!-- Success Message -->
-      <div class="success-message" id="rsvpSuccess">
-        <div class="success-message__icon">💌</div>
-        <h3 class="success-message__title">Thank you!</h3>
-        <p class="success-message__text">Your RSVP has been received. We can't wait to celebrate with you!</p>
-      </div>
-    </section>
-
-    <!-- ═══ SECTION 11: CLOSING ═══ -->
-    <section class="section closing" id="sectionClosing">
-      <div class="closing__card reveal--scale">
-        <h2 class="closing__names" id="closingNames">Abdul Basit &amp; Rahnuma Fatima</h2>
-        <p class="closing__date" id="closingDate">NOVEMBER 16, 2026</p>
-        <div class="closing__divider">❧ ❖ ☙</div>
-        <p class="closing__compliments" id="closingCompliments">Best Compliments from Ibadat Nizam<br>along with family &amp; friends.</p>
-      </div>
-      <p class="closing__footer">Made by <a href="https://www.ecometrixsolutions.in/" target="_blank" rel="noopener">Ecometrix Solutions</a> with love</p>
-    </section>
+    </footer>
 
   </main>
 
-  <!-- Music Toggle -->
-  <button class="music-btn is-hidden" id="musicBtn" aria-label="Toggle music">
+  <!-- ====== FLOATING MUSIC TOGGLE ====== -->
+  <button id="music-toggle" aria-label="Toggle background music" title="Toggle Music">
     🎵
   </button>
 
-  <!-- Audio -->
+  <!-- Background Music Audio Element -->
   <audio id="bgMusic" loop preload="none">
-    <source src="assets/audio/background-music.mp3" type="audio/mpeg" />
+    <source src="assets/audio/background-music.mp3" type="audio/mpeg">
   </audio>
 
-  <!-- Confetti Canvas -->
-  <canvas id="confettiCanvas" style="position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:9999;"></canvas>
+  <!-- ====== PARTICLE CANVAS ====== -->
+  <canvas id="particles-canvas"></canvas>
 
-  <!-- Scripts -->
+  <!-- SCRIPTS -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
   <script src="config.js"></script>
-  <script src="js/config-loader.js"></script>
+  <script src="js/particles.js"></script>
   <script src="js/envelope.js"></script>
+  <script src="js/scratch.js"></script>
   <script src="js/countdown.js"></script>
-  <script src="js/scroll-animations.js"></script>
-  <script src="js/story-toggle.js"></script>
-  <script src="js/dropdowns.js"></script>
   <script src="js/rsvp.js"></script>
-  <script src="js/confetti.js"></script>
   <script src="js/music.js"></script>
   <script src="js/app.js"></script>
 </body>

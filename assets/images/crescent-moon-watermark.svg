@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 100 100">
+  <g fill="none" stroke="#D4A853" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round" opacity="0.14">
+    <!-- Crescent Moon -->
+    <path d="M50 15 C30 15 15 32 15 52 C15 72 32 88 52 88 C62 88 72 84 78 76 C55 80 34 65 34 45 C34 30 42 20 50 15 Z" fill="rgba(212, 168, 83, 0.04)"/>
+    <!-- 8-Point Islamic Star Inside Moon Cusp -->
+    <g transform="translate(62, 38) scale(0.65)">
+      <path d="M0 -15 L4 -4 L15 0 L4 4 L0 15 L-4 4 L-15 0 L-4 -4 Z" fill="rgba(212, 168, 83, 0.08)"/>
+      <circle cx="0" cy="0" r="2.5" fill="#D4A853"/>
+    </g>
+    <!-- Subtle Orbit Ring -->
+    <circle cx="50" cy="50" r="44" stroke-dasharray="3,6" opacity="0.4"/>
+    <!-- Delicate Filigree Dots -->
+    <circle cx="20" cy="50" r="1" fill="#D4A853"/>
+    <circle cx="50" cy="20" r="1" fill="#D4A853"/>
+    <circle cx="80" cy="50" r="1" fill="#D4A853"/>
+    <circle cx="50" cy="80" r="1" fill="#D4A853"/>
+  </g>
+</svg>

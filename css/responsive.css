@@ -1,226 +1,119 @@
-/* ═══════════════════════════════════════════════
-   RESPONSIVE — Media Queries
-   ═══════════════════════════════════════════════ */
+/* ============================================
+   RESPONSIVE DESIGN & ADAPTIVE VIEWPORTS
+   Mobile-First with Tablet and Desktop Enhancements
+   ============================================ */
 
-/* ─── Small Phones (375px and below) ─── */
-@media (max-width: 375px) {
+/* ─── Base Mobile Enhancements (< 480px) ─── */
+@media (max-width: 480px) {
   .section {
-    padding: var(--space-2xl) var(--space-md);
+    padding-left: 12px;
+    padding-right: 12px;
   }
 
-  .hero__name {
-    font-size: var(--text-3xl);
+  .scratch-card-container {
+    min-height: 220px;
   }
 
-  .bismillah__card {
-    padding: 1.25rem 0.85rem;
-    width: 95vw;
+  .scratch-revealed-content {
+    padding: 20px 14px;
   }
 
-  .bismillah__arabic {
-    font-size: 1.65rem;
-    line-height: 1.6;
+  .countdown__boxes {
+    gap: 6px;
   }
 
-  .welcome__name {
-    font-size: 2rem;
-  }
-
-  .welcome__lineage {
-    font-size: 0.85rem;
-    padding: 0 4px;
-  }
-
-  .countdown__digits {
-    gap: var(--space-md);
-  }
-
-  .countdown__number {
-    font-size: var(--text-2xl);
-  }
-
-  .ceremony__card {
-    padding: var(--space-xl) var(--space-md);
-  }
-
-  .ceremony__datetime {
-    flex-direction: column;
-    gap: var(--space-sm);
-  }
-
-  .timeline__time {
-    width: 40px;
-    font-size: var(--text-xs);
+  .countdown__box {
+    padding: 8px 4px;
   }
 
   .timeline::before {
-    left: 48px;
+    left: 56px;
   }
 
-  .story__gallery {
-    gap: var(--space-sm);
+  .timeline__time {
+    width: 44px;
+    font-size: 0.78rem;
   }
 
-  .hotel-card__image {
-    display: none;
+  .timeline__event {
+    font-size: 1.05rem;
   }
 
-  .weekend__event-datetime {
+  .rsvp__attendance {
+    gap: 5px;
+  }
+
+  .rsvp__attendance-option {
+    padding: 8px 3px;
+  }
+
+  .rsvp__attendance-option .emoji {
+    font-size: 1.15rem;
+  }
+
+  .rsvp__attendance-option .label {
+    font-size: 0.66rem;
+  }
+}
+
+/* ─── Very Narrow Screens (< 360px) ─── */
+@media (max-width: 360px) {
+  :root {
+    --fs-hero-name: 2.1rem;
+    --fs-section-title: 1.6rem;
+  }
+
+  .countdown__number {
+    font-size: 1.35rem;
+  }
+
+  .countdown__label {
+    font-size: 0.65rem;
+  }
+
+  .venue-card__datetime {
     flex-direction: column;
-    gap: var(--space-sm);
+    gap: 4px;
   }
 }
 
-/* ─── Standard Mobile Devices (under 600px) ─── */
-@media (max-width: 600px) {
-  .welcome__garland,
-  .ceremony__hedge,
-  .schedule__divider {
-    max-width: 100%;
-    object-fit: contain;
-  }
-
-  .bismillah__card {
-    padding: 1.5rem 1rem;
-  }
-
-  .welcome__person {
-    padding: 0 0.5rem;
-  }
-
-  .closing__card {
-    padding: var(--space-xl) var(--space-md);
-  }
-}
-
-/* ─── Tablets (768px+) ─── */
-@media (min-width: 768px) {
-  .section {
-    padding: var(--space-4xl) var(--space-2xl);
-  }
-
-  .invitation {
-    width: 100%;
-    margin: 0 auto;
-    box-shadow: none;
-  }
-
-  .hero__content {
-    max-width: 600px;
-  }
-}
-
-/* ─── Desktop & Laptops (1024px+) ─── */
-@media (min-width: 1024px) {
-  body {
-    background-color: var(--color-bg);
-    display: block;
-    padding: 0;
-    margin: 0;
-  }
-
-  .invitation {
-    width: 100%;
-    margin: 0 auto;
-    box-shadow: none;
-  }
-
-  .hero {
-    min-height: 100vh;
-    max-height: 1050px;
-  }
-
-  .hero__content {
-    max-width: 680px;
-    padding: var(--space-3xl) var(--space-2xl);
+/* ─── Tablets & Mid-Screens (481px – 768px) ─── */
+@media (min-width: 481px) and (max-width: 768px) {
+  .section__inner {
+    max-width: 520px;
   }
 
   .envelope-wrapper {
-    width: 400px;
-    height: 540px;
-  }
-
-  .story__carousel-container {
-    max-width: 680px;
+    height: 480px;
   }
 }
 
-/* ─── Landscape Mode Safety ─── */
-@media (orientation: landscape) and (max-height: 500px) {
-  .hero {
-    min-height: 100vw;
+/* ─── Desktop Screens (> 768px) ─── */
+@media (min-width: 769px) {
+  .section__inner {
+    max-width: 560px;
   }
 
-  .countdown {
-    min-height: auto;
-    padding: var(--space-2xl) var(--space-xl);
+  .envelope-wrapper {
+    max-width: 640px;
+    height: 490px;
   }
 
-  .dresscode {
-    min-height: auto;
+  .venue-card__painting img {
+    max-height: 280px;
   }
 }
 
-/* ─── Prefer Reduced Motion ─── */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-
-  .reveal,
-  .reveal--left,
-  .reveal--right,
-  .reveal--scale {
-    opacity: 1;
-    transform: none;
-  }
-
-  .reveal-stagger > * {
-    opacity: 1;
-    transform: none;
+/* ─── High DPI / Retina Rendering ─── */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .cartouche-frame-svg,
+  .section-floral-divider img {
+    image-rendering: -webkit-optimize-contrast;
   }
 }
 
-/* ─── Dark Mode Support (subtle) ─── */
-@media (prefers-color-scheme: dark) {
-  /* Intentionally not applied — wedding invitations should keep their designed palette */
-}
-
-/* ─── High contrast / forced colors ─── */
-@media (forced-colors: active) {
-  .wax-seal__fallback {
-    border: 2px solid CanvasText;
-  }
-  
-  .action-btn {
-    border: 1px solid CanvasText;
-  }
-}
-
-/* ─── Print Styles ─── */
-@media print {
-  .envelope-screen,
-  .music-btn,
-  .action-buttons {
-    display: none !important;
-  }
-
-  .invitation {
-    box-shadow: none;
-    max-width: 100%;
-  }
-
-  .section {
-    break-inside: avoid;
-    page-break-inside: avoid;
-  }
-
-  .reveal, .reveal--left, .reveal--right, .reveal--scale {
-    opacity: 1 !important;
-    transform: none !important;
-  }
+/* ─── Prevent Horizontal Overflow Across All Devices ─── */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
 }

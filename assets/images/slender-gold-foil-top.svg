@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" preserveAspectRatio="none">
+  <defs>
+    <linearGradient id="slenderGoldTop" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E5C178" />
+      <stop offset="30%" stop-color="#FFF5DE" />
+      <stop offset="70%" stop-color="#D4A853" />
+      <stop offset="100%" stop-color="#B8860B" />
+    </linearGradient>
+  </defs>
+  <!-- Slender Hairline Gold Foil Edge along Top Flap V-seam -->
+  <polyline points="0,0 500,500 1000,0" fill="none" stroke="url(#slenderGoldTop)" stroke-width="1.3" vector-effect="non-scaling-stroke" />
+  <!-- Top horizontal seam line -->
+  <line x1="0" y1="0.8" x2="1000" y2="0.8" stroke="url(#slenderGoldTop)" stroke-width="1" vector-effect="non-scaling-stroke" />
+</svg>

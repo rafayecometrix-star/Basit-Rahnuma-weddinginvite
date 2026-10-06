@@ -1,209 +1,212 @@
-/**
- * SCRATCH TO REVEAL
- * Interactive metallic foil scratch card with touch, mouse, and pointer events.
- * Automatically dissolves and reveals photo with celebratory confetti after just a couple scratches.
- */
+/* ============================================
+   ROBUST SCRATCH-TO-REVEAL ENGINE
+   Save the Date Foil with Auto-Reveal & Confetti
+   ============================================ */
 
 (function() {
   'use strict';
 
-  let canvas, ctx;
-  let isDrawing = false;
-  let scratchedPercent = 0;
-  let revealed = false;
-  let initialized = false;
-  let scratchStrokeCount = 0;
-
-  window.setupScratchCanvas = function() {
-    canvas = document.getElementById('scratchCanvas');
-    if (!canvas) return;
-
-    ctx = canvas.getContext('2d', { willReadFrequently: true });
-    const rect = canvas.getBoundingClientRect();
-
-    const w = rect.width || canvas.offsetWidth || 200;
-    const h = rect.height || canvas.offsetHeight || 260;
-
-    if (w === 0 || h === 0) return;
-
-    // Retina sharp canvas
-    const dpr = window.devicePixelRatio || 1;
-    canvas.width = Math.round(w * dpr);
-    canvas.height = Math.round(h * dpr);
-    ctx.scale(dpr, dpr);
-
-    // Reset state
-    revealed = false;
-    scratchStrokeCount = 0;
-    canvas.classList.remove('scratch-canvas--dissolve');
-    canvas.style.display = 'block';
-    canvas.style.opacity = '1';
-
-    // Fill with luxury champagne gold scratch coating
-    const grad = ctx.createLinearGradient(0, 0, w, h);
-    grad.addColorStop(0, '#D8C698');
-    grad.addColorStop(0.3, '#EDE3C8');
-    grad.addColorStop(0.7, '#C9B37E');
-    grad.addColorStop(1, '#DFCBA0');
-
-    ctx.fillStyle = grad;
-    ctx.fillRect(0, 0, w, h);
-
-    // Subtle metallic texture stipple
-    ctx.fillStyle = 'rgba(255, 255, 255, 0.4)';
-    for (let i = 0; i < 150; i++) {
-      ctx.fillRect(Math.random() * w, Math.random() * h, 1.5, 1.5);
+  function triggerConfettiBurst(x, y) {
+    if (typeof confetti === 'function') {
+      confetti({
+        particleCount: 50,
+        spread: 75,
+        origin: { 
+          x: (x || window.innerWidth / 2) / window.innerWidth, 
+          y: (y || window.innerHeight / 2) / window.innerHeight 
+        },
+        colors: ['#D4A853', '#F8C8DC', '#FFF9F2', '#E8C87A', '#A32A53']
+      });
     }
-    ctx.fillStyle = 'rgba(120, 90, 40, 0.2)';
-    for (let i = 0; i < 150; i++) {
-      ctx.fillRect(Math.random() * w, Math.random() * h, 1.5, 1.5);
-    }
-
-    // Set composite operation for erasing
-    ctx.globalCompositeOperation = 'destination-out';
-
-    if (!initialized) {
-      initialized = true;
-      attachEvents();
-    }
-  };
-
-  function getCoordinates(e) {
-    const rect = canvas.getBoundingClientRect();
-    const clientX = e.clientX !== undefined ? e.clientX : (e.touches && e.touches[0] ? e.touches[0].clientX : (e.changedTouches ? e.changedTouches[0].clientX : 0));
-    const clientY = e.clientY !== undefined ? e.clientY : (e.touches && e.touches[0] ? e.touches[0].clientY : (e.changedTouches ? e.changedTouches[0].clientY : 0));
-    return {
-      x: clientX - rect.left,
-      y: clientY - rect.top
-    };
   }
 
-  function scratchAt(pos) {
-    if (!ctx || revealed) return;
-    ctx.beginPath();
-    ctx.arc(pos.x, pos.y, 28, 0, Math.PI * 2);
-    ctx.fill();
+  class ScratchCard {
+    constructor(canvasId, options = {}) {
+      this.canvasId = canvasId;
+      this.canvas = document.getElementById(canvasId);
+      this.options = options;
+      this.isDrawing = false;
+      this.isRevealed = false;
+      this.strokeCount = 0;
+      this.brushSize = options.brushSize || 36;
+
+      if (this.canvas) {
+        this.ctx = this.canvas.getContext('2d');
+        this.setup();
+      }
+    }
+
+    setup() {
+      if (!this.canvas) return;
+      this.resizeAndDraw();
+      this.bindEvents();
+    }
+
+    resizeAndDraw() {
+      if (this.isRevealed || !this.canvas) return;
+      
+      const parent = this.canvas.parentElement;
+      const rect = parent ? parent.getBoundingClientRect() : this.canvas.getBoundingClientRect();
+      
+      const w = Math.max(rect.width, 240);
+      const h = Math.max(rect.height, 160);
+
+      this.canvas.width = w;
+      this.canvas.height = h;
+      this.canvas.style.width = w + 'px';
+      this.canvas.style.height = h + 'px';
+
+      this.drawFoil(w, h);
+    }
+
+    drawFoil(w, h) {
+      if (this.isRevealed || !this.ctx) return;
+      const ctx = this.ctx;
+
+      ctx.save();
+      ctx.globalCompositeOperation = 'source-over';
+
+      // Shimmering Rose Gold Foil Gradient
+      const grad = ctx.createLinearGradient(0, 0, w, h);
+      grad.addColorStop(0, '#E8C87A');
+      grad.addColorStop(0.3, '#D4A853');
+      grad.addColorStop(0.5, '#F8C8DC');
+      grad.addColorStop(0.8, '#D4A853');
+      grad.addColorStop(1, '#C59B40');
+
+      ctx.fillStyle = grad;
+      ctx.fillRect(0, 0, w, h);
+
+      // Gold shimmer sparkle dust
+      for (let i = 0; i < 220; i++) {
+        ctx.fillStyle = Math.random() > 0.4 ? 'rgba(255, 255, 255, 0.4)' : 'rgba(184, 134, 11, 0.25)';
+        ctx.beginPath();
+        ctx.arc(Math.random() * w, Math.random() * h, Math.random() * 2 + 0.5, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      // Border line on foil
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.45)';
+      ctx.lineWidth = 1.5;
+      ctx.strokeRect(10, 10, w - 20, h - 20);
+
+      // Text prompt
+      ctx.fillStyle = '#4A1D24';
+      ctx.font = '600 13px "Outfit", sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.shadowColor = 'rgba(255, 255, 255, 0.8)';
+      ctx.shadowBlur = 6;
+      ctx.fillText('✨ SCRATCH TO REVEAL ✨', w / 2, h / 2);
+      ctx.shadowBlur = 0;
+
+      ctx.restore();
+    }
+
+    bindEvents() {
+      if (!this.canvas) return;
+
+      const getPos = (e) => {
+        const rect = this.canvas.getBoundingClientRect();
+        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+        const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+        return {
+          x: clientX - rect.left,
+          y: clientY - rect.top,
+          globalX: clientX,
+          globalY: clientY
+        };
+      };
+
+      const start = (e) => {
+        if (this.isRevealed) return;
+        this.isDrawing = true;
+        this.strokeCount++;
+        const pos = getPos(e);
+        this.scratch(pos.x, pos.y);
+      };
+
+      const move = (e) => {
+        if (!this.isDrawing || this.isRevealed) return;
+        e.preventDefault();
+        const pos = getPos(e);
+        this.scratch(pos.x, pos.y);
+
+        if (this.strokeCount >= 3) {
+          this.autoReveal(pos.globalX, pos.globalY);
+        }
+      };
+
+      const end = (e) => {
+        if (!this.isDrawing) return;
+        this.isDrawing = false;
+        if (this.strokeCount >= 3) {
+          const pos = e.changedTouches ? { globalX: e.changedTouches[0].clientX, globalY: e.changedTouches[0].clientY } : { globalX: window.innerWidth / 2, globalY: window.innerHeight / 2 };
+          this.autoReveal(pos.globalX, pos.globalY);
+        }
+      };
+
+      this.canvas.addEventListener('mousedown', start);
+      this.canvas.addEventListener('mousemove', move);
+      window.addEventListener('mouseup', end);
+
+      this.canvas.addEventListener('touchstart', start, { passive: false });
+      this.canvas.addEventListener('touchmove', move, { passive: false });
+      window.addEventListener('touchend', end);
+    }
+
+    scratch(x, y) {
+      if (!this.ctx) return;
+      const ctx = this.ctx;
+      ctx.save();
+      ctx.globalCompositeOperation = 'destination-out';
+      ctx.beginPath();
+      ctx.arc(x, y, this.brushSize, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+    }
+
+    autoReveal(globalX, globalY) {
+      if (this.isRevealed) return;
+      this.isRevealed = true;
+
+      this.canvas.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
+      this.canvas.style.opacity = '0';
+      this.canvas.style.transform = 'scale(1.04)';
+      this.canvas.style.pointerEvents = 'none';
+
+      triggerConfettiBurst(globalX, globalY);
+
+      if (this.options.onReveal) {
+        this.options.onReveal();
+      }
+    }
   }
 
-  function triggerAutoReveal() {
-    if (revealed) return;
-    revealed = true;
+  let dateCardInstance = null;
 
-    const hint = document.getElementById('scratchHint');
-    if (hint) hint.classList.add('is-hidden');
+  function initScratchCard() {
+    dateCardInstance = new ScratchCard('date-scratch-canvas', {
+      brushSize: 34
+    });
+  }
 
-    // Add shimmering dissolve animation to canvas
-    canvas.classList.add('scratch-canvas--dissolve');
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initScratchCard);
+  } else {
+    initScratchCard();
+  }
 
-    // Fade out and clear after animation
+  window.addEventListener('wedding:envelopeOpened', () => {
     setTimeout(() => {
-      if (ctx) ctx.clearRect(0, 0, canvas.width, canvas.height);
-      canvas.style.display = 'none';
-    }, 850);
+      if (dateCardInstance) dateCardInstance.resizeAndDraw();
+    }, 150);
+  });
 
-    // Celebrate with confetti
-    if (typeof window.triggerConfetti === 'function') {
-      setTimeout(() => window.triggerConfetti(90), 200);
-    }
-  }
-
-  function checkProgress() {
-    if (revealed) return;
-
-    scratchStrokeCount++;
-    // Auto-reveal after just 2-3 scratch interactions or touches
-    if (scratchStrokeCount >= 2) {
-      triggerAutoReveal();
-      return;
-    }
-
-    try {
-      const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-      const pixels = imageData.data;
-      let transparent = 0;
-      const total = pixels.length / 4;
-
-      for (let i = 3; i < pixels.length; i += 16) {
-        if (pixels[i] === 0) transparent++;
-      }
-
-      scratchedPercent = (transparent / (total / 4)) * 100;
-      if (scratchedPercent > 10) {
-        triggerAutoReveal();
-      }
-    } catch (e) {
-      // Fallback
-      if (scratchStrokeCount >= 2) {
-        triggerAutoReveal();
-      }
-    }
-  }
-
-  function attachEvents() {
-    const hint = document.getElementById('scratchHint');
-
-    // Pointer Events (supports Mouse, Touch, and Pen uniformly)
-    canvas.addEventListener('pointerdown', (e) => {
-      if (revealed) return;
-      isDrawing = true;
-      if (hint) hint.classList.add('is-hidden');
-      scratchAt(getCoordinates(e));
-      checkProgress();
-    });
-
-    window.addEventListener('pointermove', (e) => {
-      if (!isDrawing || revealed) return;
-      scratchAt(getCoordinates(e));
-    });
-
-    window.addEventListener('pointerup', () => {
-      if (isDrawing) {
-        isDrawing = false;
-        checkProgress();
-      }
-    });
-
-    window.addEventListener('pointercancel', () => {
-      isDrawing = false;
-    });
-
-    // Touch fallbacks
-    canvas.addEventListener('touchstart', (e) => {
-      if (revealed) return;
-      isDrawing = true;
-      if (hint) hint.classList.add('is-hidden');
-      scratchAt(getCoordinates(e));
-      checkProgress();
-    }, { passive: true });
-
-    canvas.addEventListener('touchmove', (e) => {
-      if (!isDrawing || revealed) return;
-      scratchAt(getCoordinates(e));
-    }, { passive: true });
-
-    canvas.addEventListener('touchend', () => {
-      if (isDrawing) {
-        isDrawing = false;
-        checkProgress();
-      }
-    });
-
-    // Direct click tap
-    canvas.addEventListener('click', (e) => {
-      if (revealed) return;
-      scratchAt(getCoordinates(e));
-      checkProgress();
-    });
-  }
-
-  // Handle resize
   window.addEventListener('resize', () => {
-    if (!revealed) {
-      setTimeout(window.setupScratchCanvas, 200);
+    if (dateCardInstance && !dateCardInstance.isRevealed) {
+      dateCardInstance.resizeAndDraw();
     }
   });
 
-  document.addEventListener('DOMContentLoaded', () => {
-    setTimeout(window.setupScratchCanvas, 300);
-  });
 })();

@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160">
+  <defs>
+    <pattern id="girih-pattern" width="160" height="160" patternUnits="userSpaceOnUse">
+      <g fill="none" stroke="#D4A853" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round" opacity="0.12">
+        <!-- Center 8-pointed star -->
+        <polygon points="80,50 88,72 110,80 88,88 80,110 72,88 50,80 72,72" />
+        <polygon points="80,56 86,74 104,80 86,86 80,104 74,86 56,80 74,74" opacity="0.6"/>
+        
+        <!-- Corner 8-pointed stars (tiling) -->
+        <!-- Top-Left -->
+        <polygon points="0,-30 8,-8 30,0 8,8 0,30 -8,8 -30,0 -8,-8" />
+        <polygon points="0,-24 6,-6 24,0 6,6 0,24 -6,6 -24,0 -6,-6" opacity="0.6"/>
+        
+        <!-- Top-Right -->
+        <polygon points="160,-30 168,-8 190,0 168,8 160,30 152,8 130,0 152,-8" />
+        <polygon points="160,-24 166,-6 184,0 166,6 160,24 154,6 136,0 154,-6" opacity="0.6"/>
+        
+        <!-- Bottom-Left -->
+        <polygon points="0,130 8,152 30,160 8,168 0,190 -8,168 -30,160 -8,152" />
+        <polygon points="0,136 6,154 24,160 6,166 0,184 -6,166 -24,160 -6,154" opacity="0.6"/>
+        
+        <!-- Bottom-Right -->
+        <polygon points="160,130 168,152 190,160 168,168 160,190 152,168 130,160 152,152" />
+        <polygon points="160,136 166,154 184,160 166,166 160,184 154,166 136,160 154,154" opacity="0.6"/>
+
+        <!-- Interconnecting geometric diagonal lines -->
+        <line x1="30" y1="0" x2="50" y2="80" />
+        <line x1="8" y1="8" x2="72" y2="72" />
+        <line x1="0" y1="30" x2="80" y2="50" />
+        
+        <line x1="130" y1="0" x2="110" y2="80" />
+        <line x1="152" y1="8" x2="88" y2="72" />
+        <line x1="160" y1="30" x2="80" y2="50" />
+        
+        <line x1="0" y1="130" x2="80" y2="110" />
+        <line x1="8" y1="152" x2="72" y2="88" />
+        <line x1="30" y1="160" x2="50" y2="80" />
+        
+        <line x1="160" y1="130" x2="80" y2="110" />
+        <line x1="152" y1="152" x2="88" y2="88" />
+        <line x1="130" y1="160" x2="110" y2="80" />
+        
+        <!-- Subtle ornamental center dot -->
+        <circle cx="80" cy="80" r="1.5" fill="#D4A853" opacity="0.7"/>
+        <circle cx="0" cy="0" r="1.5" fill="#D4A853" opacity="0.7"/>
+        <circle cx="160" cy="0" r="1.5" fill="#D4A853" opacity="0.7"/>
+        <circle cx="0" cy="160" r="1.5" fill="#D4A853" opacity="0.7"/>
+        <circle cx="160" cy="160" r="1.5" fill="#D4A853" opacity="0.7"/>
+      </g>
+    </pattern>
+  </defs>
+  <rect width="160" height="160" fill="url(#girih-pattern)" />
+</svg>
