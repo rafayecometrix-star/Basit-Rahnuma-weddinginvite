@@ -66,9 +66,8 @@ const WEDDING_CONFIG = {
     dateLabel: "Monday, 16th November 2026",
     events: [
       { time: "20:30", title: "Guests Arrive & Welcome", icon: "umbrella" },
-      { time: "21:00", title: "Nikaah Ceremony", icon: "default" },
-      { time: "21:30", title: "Dinner", icon: "venue" },
-      { time: "23:00", title: "Rukhsati / Bidai", icon: "glasses" }
+      { time: "21:00", title: "Reception Ceremony", icon: "default" },
+      { time: "21:30", title: "Dinner", icon: "venue" }
     ]
   },
 

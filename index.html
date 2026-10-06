@@ -87,9 +87,9 @@
         <p class="hero__bismillah-sub">In the name of Allah, the Most Gracious, the Most Merciful</p>
         <p class="hero__invitation-text">With the blessings of Allah and our families,<br>we request the honour of your presence to celebrate the Wedding Reception of our son.</p>
         <h1 class="hero__names" id="hero-names">
-          Abdul Basit
+          <span class="hero__name">Abdul Basit</span>
           <span class="hero__ampersand">&</span>
-          Rahnuma Fatima
+          <span class="hero__name">Rahnuma Fatima</span>
         </h1>
         <p class="hero__venue" id="hero-venue">Wedding Reception • Monday, 16 November 2026</p>
       </div>
@@ -104,7 +104,7 @@
     <section id="our-nikah" class="section date-section">
       <div class="section__inner reveal-on-scroll">
         <div class="ornament-divider">❧ ❖ ☙</div>
-        <span class="section__badge">✦ OUR NIKAH ✦</span>
+        <span class="section__badge">✦ RECEPTION CEREMONY ✦</span>
         <h2 class="section__title">Our Celebration</h2>
         
         <!-- Interactive Save-the-Date Scratch Card -->
@@ -189,24 +189,24 @@
         <span class="section__badge">✦ THE FAMILIES ✦</span>
         <h2 class="section__title">The Families</h2>
         <div class="couple__card" id="couple-card">
-          <!-- Bride -->
-          <div class="couple__block">
-            <span class="couple__role-tag">THE BRIDE</span>
-            <h2 class="couple__name" id="bride-name">RAHNUMA FATIMA</h2>
-            <p class="couple__lineage">(D/o Mr. &amp; Mrs. Mohd. Nahid)</p>
-          </div>
-
-          <!-- Cursive Flourish 'and' -->
-          <div class="couple__cursive-and">
-            <span>with</span>
-          </div>
-
           <!-- Groom -->
           <div class="couple__block">
             <span class="couple__role-tag">THE GROOM</span>
             <h2 class="couple__name" id="groom-name">ABDUL BASIT</h2>
             <p class="couple__lineage">(Grand S/o Late Mr. &amp; Mrs. Abdul Hameed Sheikh)</p>
             <p class="couple__parent-text">Son of Mr. Nizam Alam &amp; Mrs. Sahba Firdaus</p>
+          </div>
+
+          <!-- Cursive Flourish 'with' -->
+          <div class="couple__cursive-and">
+            <span>with</span>
+          </div>
+
+          <!-- Bride -->
+          <div class="couple__block">
+            <span class="couple__role-tag">THE BRIDE</span>
+            <h2 class="couple__name" id="bride-name">RAHNUMA FATIMA</h2>
+            <p class="couple__lineage">(D/o Mr. &amp; Mrs. Mohd. Nahid)</p>
           </div>
 
           <!-- Invitation Subtitle -->
@@ -242,7 +242,7 @@
           <div class="timeline__item">
             <span class="timeline__time">21:00</span>
             <div class="timeline__node"></div>
-            <span class="timeline__event">Nikaah Ceremony</span>
+            <span class="timeline__event">Reception Ceremony</span>
             <div class="timeline__icon-badge">✨</div>
           </div>
 
@@ -252,20 +252,13 @@
             <span class="timeline__event">Dinner</span>
             <div class="timeline__icon-badge">🍽️</div>
           </div>
-
-          <div class="timeline__item">
-            <span class="timeline__time">23:00</span>
-            <div class="timeline__node"></div>
-            <span class="timeline__event">Rukhsati / Bidai</span>
-            <div class="timeline__icon-badge">🌸</div>
-          </div>
         </div>
 
         <!-- Venue Card directly inside The Celebration -->
         <div class="venue-card-wrapper" id="events">
           <div class="venue-card">
             <div class="ornament-divider" style="margin-bottom:6px;">❧ ❖ ☙</div>
-            <h2 class="venue-card__title">Wedding<br>&amp; Reception</h2>
+            <h2 class="venue-card__title">Reception<br>Ceremony</h2>
             <div class="gold-divider-line"></div>
             
             <p class="venue-card__where">WHERE WE CELEBRATE</p>
@@ -409,7 +402,11 @@
     <footer id="footer">
       <div class="section__inner">
         <div class="ornament-divider">❧ ❖ ☙</div>
-        <p class="footer__names">Abdul Basit &amp; Rahnuma Fatima</p>
+        <div class="footer__names" id="footer-names">
+          <span class="footer__name">Abdul Basit</span>
+          <span class="footer__ampersand">&amp;</span>
+          <span class="footer__name">Rahnuma Fatima</span>
+        </div>
         <p class="footer__compliments">Best Compliments from Ibadat Nizam along with family &amp; friends.</p>
         <p class="footer__credit">With Sincere Duas &amp; Warm Gratitude</p>
       </div>
